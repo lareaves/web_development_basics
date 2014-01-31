@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <div id="content">
+    <h1>Browser Development Basics</h1>
+    <h2><a href="http://en.wikipedia.org/wiki/Hypertext_Markup_Language">HyperText Markup Language</a></h2>
+    <div class="subsection">
+      <div class="note">
+	You can view the source of any webpage using the "view source" tool available in all major desktop browsers via the key combination Ctl-U.
+      </div>
+      A <a href="http://en.wikipedia.org/wiki/Markup_language">markup language</a> is a modern system for annotating a document in a way that is syntactically distinguishable from the text.  So, HTML is a formatting and layout language for text as well as user interface elements (input boxes, menus, etc.) in documents that contain hyperlinks.  HTML uses pairs of <b>tags</b> to specify <b>elements</b>.  For example, all HTML documents start with an &lt;html&gt; tag and end with an &lt;/html&gt; tag.  Comments start with &lt;!-- and end with --&gt;.  They can contain other tags, which will be ignored until the --&gt; is reached.
+    </div>
+
+    <h2>Starting off</h2>
+    <div class="subsection">
+      doctype/HTML versions<br />
+      <a href="http://www.w3schools.com/tags/tag_doctype.asp">http://www.w3schools.com/tags/tag_doctype.asp</a><br />
+      <a href="http://www.w3schools.com/tags/tag_html.asp">http://www.w3schools.com/tags/tag_html.asp</a><br />
+      <a href="http://www.w3schools.com/tags/tag_head.asp">http://www.w3schools.com/tags/tag_head.asp</a><br /><br />
+      stylesheets<br />
+      <a href="http://www.w3schools.com/tags/tag_link.asp">http://www.w3schools.com/tags/tag_link.asp</a><br /><br />
+      other uses for the link tag<br />
+      <a href="http://www.w3schools.com/tags/att_link_rel.asp">http://www.w3schools.com/tags/att_link_rel.asp</a><br /><br />
+      script<br />
+      <a href="http://www.w3schools.com/tags/att_link_rel.asp">http://www.w3schools.com/tags/tag_script.asp</a><br /><br />
+      and finally...<br />
+      <a href="http://www.w3schools.com/tags/tag_body.asp">http://www.w3schools.com/tags/tag_body.asp</a><br />
+    </div>
+    
+    <h2><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">Cascading Style Sheets</a></h2>
+    <div class="subsection">
+      <div class="note">The source code for stylesheets is also available by clicking the link in the HTML source.</div>
+      Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language.  They are called "cascading" because HTML elements inherit all style attributes from their parents.  This inherited style can be overridden by local style attributes.  Using styles, you can control everything from colors and font properties to layout and even some <span class="dynamic">dynamic behavior</span>.
+    </div>
+
+    <h2>Layout</h2>
+    <div class="subsection">
+      div/span and id/class<br />
+      Divs and spans are both container elements that are available for logical grouping and layout.  Divs are block elements, and spans are inline.<br />
+      <a href="http://www.w3schools.com/html/html_blocks.asp">http://www.w3schools.com/html/html_blocks.asp</a><br />
+      <a href="http://www.w3schools.com/css/css_id_class.asp">http://www.w3schools.com/css/css_id_class.asp</a><br /><br />
+
+      margin, border, padding, content<br />
+      <a href="http://www.w3.org/TR/CSS2/box.html">http://www.w3.org/TR/CSS2/box.html</a><br /><br />
+
+      float/clear<br />
+      <a href="http://www.w3schools.com/css/css_float.asp">http://www.w3schools.com/css/css_float.asp</a>
+    </div>
+
+    <h2>Aesthetics</h2>
+    <div class="subsection">
+      colors<br />
+      <a href="http://www.w3schools.com/cssref/css_colors.asp">http://www.w3schools.com/cssref/css_colors.asp</a><br />
+      <a href="http://www.w3schools.com/cssref/css_colornames.asp">http://www.w3schools.com/cssref/css_colornames.asp</a><br /><br />
+
+      borders<br />
+
+      text<br />
+
+
+    </div>
+
+    <h2>Links/Images/Forms</h2>
+    <div class="subsection">
+      <a href="http://www.w3schools.com/tags/tag_a.asp">http://www.w3schools.com/tags/tag_a.asp</a><br />
+      <a href="http://www.w3schools.com/tags/tag_a.asp">http://www.w3schools.com/tags/tag_img.asp</a><br />
+      <a href="http://www.w3schools.com/tags/tag_form.asp">http://www.w3schools.com/tags/tag_form.asp</a><br />
+      form demo goes here
+    </div>
+
+    <h2>Javascript</h2>
+    <div class="subsection">
+      javascript basics go here: form input checking, DOM manipulation, AJAX
+    </div>
+
+    <h2>Automated Users</h2>
+    <div class="subsection">
+      Humans are not the only users of websites.  According to <a href="http://www.incapsula.com/blog/bot-traffic-report-2013.html">a study by Incapsula</a>, bots, or programs that interact with people or services over the web, now account for 61.5% of website traffic:<br /><br />
+      <div class="center_image">
+	<img src="http://www.incapsula.com/images/blog/images/bot-traffic-report-2013.jpg" alt='From 2012 to 2013, the percentage of website traffic that was from bots increased from 51% to 61.5%.  "Search engines + Other good bots" accounted from 31% (up 55% yoy).  "Scrapers" accounted from 5% (stable).  "Hacking Tools" accounted from 4.5% (down 10%).  "Spammers" accounted from 0.5% (down 75%).  "Other Impersonators" accounted from 20.5% (up 8%)' /></div>
+    </div>
+
+    <h2>Accessibility</h2>
+    <div class="subsection">
+      In addition to automated users, websites must be designed to be used with screen reading and voice command software so that it is accessible to as many people as possible.<br /><br />
+      alt text for screen readers<br />
+      <a href="http://www.w3schools.com/tags/att_img_alt.asp">http://www.w3schools.com/tags/att_img_alt.asp</a><br /><br />
+
+      tab navigable forms for voice command software<br />
+      <a href="http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G59">http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G59</a><br /><br />
+
+      color blindness sensitvity<br />
+      <a href="http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G14.html">http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G14.html</a><br /><br />
+
+      Web Content Accessibility Guidelines 2.0<br />
+      <a href="http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/">http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/</a>
+    </div>
+
+    <h2><a href="http://git-scm.com/">Git</a></h2>
+    <div class="subsection">
+      Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.  Git is easy to learn and has a tiny footprint with lightning fast performance.<br />
+      We will be using <a href="https://github.com/">github.com</a> to host our repositories.
+    </div>
+
+    <h2>Assignment</h2>
+    <div class="subsection">
+      This week's <a href="assignment2.html">assignment</a> is to sign up for a github.com account, fork this repository, and make some modifications, and then submit a pull request.
+    </div>
+  </div><!-- id="content" -->
+</body>
+</html>
