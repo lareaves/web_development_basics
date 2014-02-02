@@ -50,3 +50,33 @@ span.dynamic:hover {
     color: cornsilk;
     background-color: saddlebrown;
 }
+
+div.code {
+    font-family: monospace;
+    background-color: black;
+    color: #00FF00;
+    width: 50%;
+    padding: 10px;
+    margin: 20px;
+}
+
+form#ruby_input input {
+    background-color: lightskyblue;
+}
+
+div#hidden_div {
+    display: none;
+    background-color: lightskyblue;
+}
+
+ul {
+    list-style: none;
+}
+
+div.left {
+    float: left;
+}
+
+div.clear {
+    clear: both;
+}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
@@ -11,10 +12,10 @@
       <div class="note">
 	You can view the source of any webpage using the "view source" tool available in all major desktop browsers via the key combination Ctl-U.
       </div>
-      A <a href="http://en.wikipedia.org/wiki/Markup_language">markup language</a> is a modern system for annotating a document in a way that is syntactically distinguishable from the text.  So, HTML is a formatting and layout language for text as well as user interface elements (input boxes, menus, etc.) in documents that contain hyperlinks.  HTML uses pairs of <b>tags</b> to specify <b>elements</b>.  For example, all HTML documents start with an &lt;html&gt; tag and end with an &lt;/html&gt; tag.  Comments start with &lt;!-- and end with --&gt;.  They can contain other tags, which will be ignored until the --&gt; is reached.
+      A <a href="http://en.wikipedia.org/wiki/Markup_language">markup language</a> is a modern system for annotating a document in a way that is syntactically distinguishable from the text.  So, HTML is a formatting and layout language for text as well as user interface elements (input boxes, menus, etc.) in documents that contain hyperlinks.  HTML uses pairs of <b>tags</b> to specify <b>elements</b>.  For example, all HTML documents start with an &lt;html&gt; tag and end with an &lt;/html&gt; tag.  Comments start with &lt;!-- and end with --&gt;.  Comments can contain other tags, which will be ignored until the --&gt; is reached.
     </div>
 
-    <h2>Starting off</h2>
+    <h2><a id="starting_off">Starting off</a></h2>
     <div class="subsection">
       doctype/HTML versions<br />
       <a href="http://www.w3schools.com/tags/tag_doctype.asp">http://www.w3schools.com/tags/tag_doctype.asp</a><br />
@@ -34,6 +35,19 @@
     <div class="subsection">
       <div class="note">The source code for stylesheets is also available by clicking the link in the HTML source.</div>
       Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language.  They are called "cascading" because HTML elements inherit all style attributes from their parents.  This inherited style can be overridden by local style attributes.  Using styles, you can control everything from colors and font properties to layout and even some <span class="dynamic">dynamic behavior</span>.
+      <h3>Selectors/Style Attributes</h3>
+      <div class="code">
+	div.code {<br />
+	&nbsp;&nbsp;font-family: monospace;<br />
+	&nbsp;&nbsp;background-color: black;<br />
+	&nbsp;&nbsp;color: #00FF00;<br />
+	&nbsp;&nbsp;width: 50%;<br />
+	&nbsp;&nbsp;padding: 10px;<br />
+	}<br /><br />
+	form#ruby_input input {<br />
+	&nbsp;&nbsp;background-color: lightskyblue;<br />
+	}<br />
+      </div>      
     </div>
 
     <h2>Layout</h2>
@@ -56,28 +70,163 @@
       <a href="http://www.w3schools.com/cssref/css_colors.asp">http://www.w3schools.com/cssref/css_colors.asp</a><br />
       <a href="http://www.w3schools.com/cssref/css_colornames.asp">http://www.w3schools.com/cssref/css_colornames.asp</a><br /><br />
 
+      units<br />
+      <a href="http://www.w3schools.com/cssref/css_units.asp">http://www.w3schools.com/cssref/css_units.asp</a><br /><br />
+
       borders<br />
-
-      text<br />
-
-
+      <a href="http://www.w3schools.com/cssref/pr_border.asp">http://www.w3schools.com/cssref/pr_border.asp</a>
     </div>
 
-    <h2>Links/Images/Forms</h2>
+    <h2>Links/Forms</h2>
     <div class="subsection">
-      <a href="http://www.w3schools.com/tags/tag_a.asp">http://www.w3schools.com/tags/tag_a.asp</a><br />
-      <a href="http://www.w3schools.com/tags/tag_a.asp">http://www.w3schools.com/tags/tag_img.asp</a><br />
+      Anchors can be used for links to other documents, as well as <a href="#starting_off">links within a document</a>.<br />
+      <a href="http://www.w3schools.com/tags/tag_a.asp">http://www.w3schools.com/tags/tag_a.asp</a><br /><br />
+
+      Forms<br />
       <a href="http://www.w3schools.com/tags/tag_form.asp">http://www.w3schools.com/tags/tag_form.asp</a><br />
-      form demo goes here
+      <a href="http://www.w3schools.com/tags/tag_input.asp">http://www.w3schools.com/tags/tag_input.asp</a><br /><br />
+      <form id="demo_types_form">
+	<ul>
+	  <div class="left">
+	    <li>button</li>
+	    <input type="button" value="click me" />
+	    <li>checkbox</li>
+	    <input type="checkbox" /><input type="checkbox" />
+	    <li>color</li>
+	    <input type="color" />
+	    <li>date</li>
+	    <input type="date" />
+	    <li>datetime</li>
+	    <input type="datetime" />
+	    <li>datetime-local</li>
+	    <input type="datetime-local" />
+	    <li>email</li>
+	    <input type="email" />
+	    <li>file</li>
+	    <input type="file" />
+	    <li>hidden</li>
+	    <input type="hidden" />
+	    <li>month</li>
+	    <input type="month" />
+	    <li>number</li>
+	    <input type="number" />
+	  </div><div class="left">
+	    <li>password</li>
+	    <input type="password" />
+	    <li>radio</li>
+	    <input type="radio" name="radio_demo" />
+	    <input type="radio" name="radio_demo" />
+	    <li>range</li>
+	    <input type="range" min="0" max="100" step="1" value="50"/>
+	    <li>reset</li>
+	    <input type="reset" />
+	    <li>search</li>
+	    <input type="search" />
+	    <li>submit</li>
+	    <input type="submit" />
+	    <li>tel</li>
+	    <input type="tel" />
+	    <li>text</li>
+	    <input type="text" />
+	    <li>time</li>
+	    <input type="time" />
+	    <li>url</li>
+	    <input type="url" />
+	    <li>week</li>
+	    <input type="week" />
+	  </div>
+	  <div class="clear"></div>
+	</ul>
+      </form>
+
+      Other form elements<br />
+      <a href="http://www.w3schools.com/tags/tag_label.asp">http://www.w3schools.com/tags/tag_label.asp</a><br />
+      <a href="http://www.w3schools.com/tags/tag_textarea.asp">http://www.w3schools.com/tags/tag_textarea.asp</a><br />
+      <a href="http://www.w3schools.com/tags/tag_select.asp">http://www.w3schools.com/tags/tag_select.asp</a><br />
+      <a href="http://www.w3schools.com/tags/tag_option.asp">http://www.w3schools.com/tags/tag_option.asp</a><br />
+      <a href="http://www.w3schools.com/tags/tag_button.asp">http://www.w3schools.com/tags/tag_button.asp</a><br /><br />
+
+      Javascript Greeting<br />
+      <form id="greeting_form" action="javascript:greet();">
+	<label for="name">What is your name?</label><input type="text" name="name" id="name" />
+	<input type="submit" value="Greet" />
+      </form>
+      <br />
+      Ajax Form<br />
+      <form id="ajax_form">
+	<textarea name="html_code" id="html_code" cols="50" rows="5">
+<div style="color: red; margin: 10px;">
+  I've been to Utah and back!
+</div>
+	</textarea>
+	<br />
+	<button type="button" onclick="load_ajax(); return false;">echo!</button>
+      </form>
+      <br />
+      <div id="ajax_target">
+      </div>
+
+      Post Form<br />
+      <form method="post" action="http://symlink.dk/code/php/submit/">
+	Text: <input type="text" name="text" /><br />
+	<select name="color">
+	  <option value="blue">Blue</option>
+	  <option value="red" selected="selected">Red</option>
+	  <option value="green">Green</option>
+	  <option value="orange">Orange</option>
+	</select>
+	<input type="submit" />
+      </form>
     </div>
 
-    <h2>Javascript</h2>
+    <h2>Javascript/<a href="http://jquery.com/">JQuery</a></h2>
     <div class="subsection">
-      javascript basics go here: form input checking, DOM manipulation, AJAX
+      Javascript is the programming language of the browser.  We've seen AJAX, <a href="http://en.wikipedia.org/wiki/Document_Object_Model">DOM</a> manipulation.  Javascript also supports objects.<br />
+      <div class="code">
+	function counter() {<br />
+	&nbsp;&nbsp;var count = 0;<br />
+	&nbsp;&nbsp;this.count_one = function() { count++; };<br />
+	&nbsp;&nbsp;this.get_count = function() { return count; };<br />
+	}<br /><br />
+	function test_counter() {<br />
+	&nbsp;&nbsp;var c = counter_object;<br />
+	&nbsp;&nbsp;var success = 1;<br />
+        &nbsp;&nbsp;for (var i = 0; i < 10; i++) {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;if (c.get_count() != i) {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("counter is broken!");<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;success = 0;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;c.count_one();<br />
+					&nbsp;&nbsp;}<br /><br />
+					&nbsp;&nbsp;if (success) {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;alert("counter passed test");<br />
+					&nbsp;&nbsp;}<br />
+					}
+      </div>
+      <button type="button" onclick="test_counter(); return false;">Run test_counter</button><br /><br />
+      Most of the time, javascript developers lean heavily on open source libraries such which simplify everything from network requests (AJAX), changing the current page (DOM Manipulation), or even <a href="http://api.jquery.com/category/effects/">animations</a>.<br />
+      <div class="code">
+	$("#hidden_div").slideToggle();
+      </div>
+      <button type="button" onclick="$('#hidden_div').slideToggle();">Run slideToggle()</button><br /><br />
+      <div id="hidden_div"><div class="note">
+	  <a href="http://prototypejs.org/">Prototype</a> is another JS library with similar functionality to JQuery, including the use of $ and CSS selectors.
+      </div></div>
+      <br />
+      Javascript is also useful for validating user input before sending it to the server.  However, the server should never rely on client-side validation of input, and should also perform it's own validation.  Javascript can help you avoid unnecessary server requests though.<br />
+      <div class="code">
+	var name = $('form input#name').val();<br />
+	if (name == '') {<br />
+	&nbsp;&nbsp;alert('You must supply a name');<br />
+	}
+      </div>
     </div>
 
-    <h2>Automated Users</h2>
+    <h2>Image/Automated Users</h2>
     <div class="subsection">
+      <a href="http://www.w3schools.com/tags/tag_a.asp">http://www.w3schools.com/tags/tag_img.asp</a><br /><br />
+
       Humans are not the only users of websites.  According to <a href="http://www.incapsula.com/blog/bot-traffic-report-2013.html">a study by Incapsula</a>, bots, or programs that interact with people or services over the web, now account for 61.5% of website traffic:<br /><br />
       <div class="center_image">
 	<img src="http://www.incapsula.com/images/blog/images/bot-traffic-report-2013.jpg" alt='From 2012 to 2013, the percentage of website traffic that was from bots increased from 51% to 61.5%.  "Search engines + Other good bots" accounted from 31% (up 55% yoy).  "Scrapers" accounted from 5% (stable).  "Hacking Tools" accounted from 4.5% (down 10%).  "Spammers" accounted from 0.5% (down 75%).  "Other Impersonators" accounted from 20.5% (up 8%)' /></div>
@@ -85,7 +234,7 @@
 
     <h2>Accessibility</h2>
     <div class="subsection">
-      In addition to automated users, websites must be designed to be used with screen reading and voice command software so that it is accessible to as many people as possible.<br /><br />
+      In addition to automated users, websites must be designed to be used with screen reading and voice command software so that it is accessible to as many people as possible.  Additionally, website visitors are increasingly on mobile devices with smaller screens.  This must also be taken into consideration, for example by using percentages rather than absolute pixel values.<br /><br />
       alt text for screen readers<br />
       <a href="http://www.w3schools.com/tags/att_img_alt.asp">http://www.w3schools.com/tags/att_img_alt.asp</a><br /><br />
 
@@ -102,12 +251,37 @@
     <h2><a href="http://git-scm.com/">Git</a></h2>
     <div class="subsection">
       Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.  Git is easy to learn and has a tiny footprint with lightning fast performance.<br />
+      <div class="center_image">
+	<img src="http://git-scm.com/figures/18333fig0201-tn.png" />
+      </div>
+      <div class="code">
+	> git clone git://github.com/your_user_name/web_development_basics.git<br />
+	> git status<br />
+	> git add new_or_modified_file<br />
+	> git commit -m 'This is the commit message, if you leave off the minus m, it will open a text editor for you to write your commit log.  It will use whatever the EDITOR variable is set to.  Be careful with your apostrophes/quotes, since contractions can mess it up unles you use ""'<br />
+	> git rm file_to_be_removed<br />
+	> git mv file_or_files_to_be_moved target_location<br />
+	  # to create a branch starting from current code<br />
+	> git checkout -b branch_name<br />
+	  # to switch to an existing branch (master is the default branch)<br />
+	> git checkout master<br />
+	> git push<br />
+	> git pull<br />
+	> git log<br />
+	> git blame<br />
+	  # oops
+	> git commit --amend
+	> git checkout filename<br />
+	> git reset HEAD filename<br />
+      </div>
+      For more examples and to learn how to use the more powerful features of git, see the <a href="http://git-scm.com/book/en">Git Book</a>.<br /><br />
+
       We will be using <a href="https://github.com/">github.com</a> to host our repositories.
     </div>
 
     <h2>Assignment</h2>
     <div class="subsection">
-      This week's <a href="assignment2.html">assignment</a> is to sign up for a github.com account, fork this repository, and make some modifications, and then submit a pull request.
+      This week's <a href="assignment2.html">assignment</a> is to sign up for a github.com account, fork this repository, make some modifications, and then submit a pull request.  See the link for details.
     </div>
   </div><!-- id="content" -->
 </body>
