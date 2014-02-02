@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="jquery-min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <div id="content">
+    <h1>Assignment 2</h1>
+    You will be building a interactive web page in order to learn to use Git, and also practice your HTML, CSS, and Javascript skills.  After forking the repository that contains the source for the assignment and lecture, you will start by copying the provided skeleton web page.  You must name this copy as "mix_user_name-assignment2.html", and check it into the repository before making any changes.  This assignment will be submitted via github as a pull request.<br /><br />
+    Your web page must have a form can collect any type of information, but it must meet these requirements:
+    <ul>
+      <li>The form must submit at least 4 different variables, using 4 different types of input (not necessarily &lt;input&gt tags).</li>
+      <li>At least 3 of the form variables must be required via Javascript validation.</li>
+      <li>One variable must be validated for something besides existance (for example, a number that has to be within a certain range).</li>
+      <li>Your action should be "http://symlink.dk/code/php/submit" and your method should be POST so I can easily verify you have correctly submitted the form.</li>
+      <li>Your page should have at least one animation that can be activated with a button.</li>
+      <li>You must manipulate the DOM.  You can do this via a button, by showing an error message in a div, or however you would like to activate it.  Just make it clear so I don't miss it.</li>
+    </ul><br />
+    You may use any of the code provided, and the skeleton includes jquery, script.js, and style.css.  If you are able to figure out how to use it, you are allowed to use the <a href="http://jqueryvalidation.org/">JQuery Validation Plugin</a>(http://jqueryvalidation.org/) to perform your form validation.<br /><br /><br />
+    <h2>In Class Portion</h2>
+    I will walk you through using Git for this project.  You must complete this section today so I know you can handle Git well enough to submit your assignment on time next week.  As usual, there will be no excuses for late assignments.  Please ask questions if you get stuck.<br /><br />
+    1.  Your first task is to <a href="https://github.com/join">sign up</a>(https://github.com/join) for a github account.  If possible, please use your mix username as your github username.<br /><br />
+    2.  After you have logged in, go to my version of the repository at <a href="https://github.com/lareaves/web_development_basics">https://github.com/lareaves/web_development_basics</a>.  Click the "Fork" button in the top right.<br /><br />
+    3.  When the fork is ready, you can clone your repository via
+    <div class="code">git clone https://github.com/your_username_here/web_development_basics.git</div>This will create a folder called web_development_basics on your local disk.<br /><br />
+    4.  Next, copy <a href="skeleton.html">skeleton.html</a> to mix_user_name-assignment2.html and check it into your local repository.
+    <div class="code">
+      > cd web_development basics<br /><br />
+        # note: there is no 'git cp'<br />
+      > cp skeleton.html mix_user_name-assignment2.html<br /><br />
+        # this adds it to staging<br />
+      > git add mix_user_name-assignment2.html<br /><br />
+        # check everything looks good<br />
+      > git status<br /><br />
+        # and commit it<br />
+      > git commit -m 'copy from skeleton'
+    </div>
+    Please note, mix_user_name should be your username.  I want to avoid duplicate filenames, so please don't name it exactly as above.<br /><br />
+    5. Push the commit to the github repo you initially cloned from
+    <div class="code">> git push</div>
+    6. Visit the pull <a href="https://github.com/lareaves/web_development_basics/pulls">request page</a> (https://github.com/lareaves/web_development_basics/pulls) for my repository.  Click the green "New pull request" button to begin.  Click "compare across forks", then chose your fork for the "head fork" and leave my fork as the "base fork".  As long as you didn't make a new branch (good for you if you did, just change the setting here), you can leave the branch on the default "master".  Now, click "Create pull request".  You will be able to give a title and description to your pull request here.  Just put your name for the title, and say something about the code being the initial copy of the skeleton.<br /><br />
+    7.  Once you have sent the first pull request, you mat leave.  You must submit a final pull request with your full assignment before lab starts next week.
+
+    
+
+  </div>
+</body>
+</html>
