@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+  <title>Web Development Basics- CS230</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
@@ -15,12 +16,40 @@
       A <a href="http://en.wikipedia.org/wiki/Markup_language">markup language</a> is a modern system for annotating a document in a way that is syntactically distinguishable from the text.  So, HTML is a formatting and layout language for text as well as user interface elements (input boxes, menus, etc.) in documents that contain hyperlinks.  HTML uses pairs of <b>tags</b> to specify <b>elements</b>.  For example, all HTML documents start with an &lt;html&gt; tag and end with an &lt;/html&gt; tag.  Comments start with &lt;!-- and end with --&gt;.  Comments can contain other tags, which will be ignored until the --&gt; is reached.
     </div>
 
+    <h2><a href="http://en.wikipedia.org/wiki/HTTP">HyperText Transfer Protocol</a></h2>
+    <div class="subsection">
+      HTTP is the primary protocol of the browser.  While <a href="http://en.wikipedia.org/wiki/Websockets">WebSockets</a>, <a href="http://en.wikipedia.org/wiki/SPDY">SPDY</a> and other specialized protocols have being gaining ground, the vast majority of browser <-> server communications happens over HTTP.
+	<div class="code">
+	  > telnet google.com 80<br />
+	  Trying 74.125.225.142...<br />
+	  Connected to google.com.<br />
+	  Escape character is '^]'.<br />
+	  GET /<br />
+	  HTTP/1.0 200 OK<br />
+	  Date: Sun, 02 Feb 2014 12:13:59 GMT<br />
+	  Expires: -1<br />
+	  Cache-Control: private, max-age=0<br />
+	  Content-Type: text/html; charset=ISO-8859-1<br />
+	  Set-Cookie: key=value; expires=Tue, 02-Feb-2016 12:13:59 GMT; path=/; domain=.google.com<br />
+	  Set-Cookie: real_cookie_censored=because_it_had_my_session_credentials; expires=Mon, 04-Aug-2014 12:13:59 GMT; path=/; domain=.google.com; HttpOnly<br />
+	  P3P: CP="This is not a P3P policy! See http://www.google.com/support/accounts/bin/answer.py?hl=en&answer=151657 for more info."<br />
+	  Server: gws<br />
+	  X-XSS-Protection: 1; mode=block<br />
+	  X-Frame-Options: SAMEORIGIN<br />
+	  Alternate-Protocol: 80:quic<br />
+	  <br />
+	  &lt;!doctype html&gt;<br />...
+	</div>
+    </div>
+
     <h2><a id="starting_off">Starting off</a></h2>
     <div class="subsection">
       doctype/HTML versions<br />
       <a href="http://www.w3schools.com/tags/tag_doctype.asp">http://www.w3schools.com/tags/tag_doctype.asp</a><br />
       <a href="http://www.w3schools.com/tags/tag_html.asp">http://www.w3schools.com/tags/tag_html.asp</a><br />
       <a href="http://www.w3schools.com/tags/tag_head.asp">http://www.w3schools.com/tags/tag_head.asp</a><br /><br />
+      title<br />
+      <a href="http://www.w3schools.com/tags/tag_title.asp">http://www.w3schools.com/tags/tag_title.asp</a><br /><br />
       stylesheets<br />
       <a href="http://www.w3schools.com/tags/tag_link.asp">http://www.w3schools.com/tags/tag_link.asp</a><br /><br />
       other uses for the link tag<br />
@@ -66,6 +95,14 @@
 
     <h2>Aesthetics</h2>
     <div class="subsection">
+      <div class="note">You can specify colors as<br />
+	hexidecimal RGB values: #00FF00;<br />
+	RGB colors: rgb(0, 255, 0);<br />
+	RGBA colors: rgb(0, 255, 0.90);<br />
+	HSL colors: hsl(120, 100, 100);<br />
+	HSLA colors: hsl(120, 100, 100, 0.9);<br />
+	names: lime;
+      </div>
       colors<br />
       <a href="http://www.w3schools.com/cssref/css_colors.asp">http://www.w3schools.com/cssref/css_colors.asp</a><br />
       <a href="http://www.w3schools.com/cssref/css_colornames.asp">http://www.w3schools.com/cssref/css_colornames.asp</a><br /><br />
@@ -277,6 +314,11 @@
       For more examples and to learn how to use the more powerful features of git, see the <a href="http://git-scm.com/book/en">Git Book</a>.<br /><br />
 
       We will be using <a href="https://github.com/">github.com</a> to host our repositories.
+    </div>
+
+    <h2>Dropbox/Google Drive/Backups</h2>
+    <div class="subsection">
+      There are several other options for sharing files among teams.  As part of your google account via mix, you have access to <a href="https://drive.google.com/">google drive</a>.  You can use this to share files, and Google Documents, which can be collaboratively edited by multiple users simultaneously.  <a href="https://db.tt/zNEiy6C">Dropbox</a>(disclaimer: referral link) is also a good option for sharing files.  It syncs all files locally to each of the computers that you install it on.  Both Google Drive and Dropbox have some limited version control abilities, but both do well with documents that have binary formats, especially large ones.  None of these solutions are failsafe backups, and it is usually best to sync important documents and files to as many systems as you can spare the disk space on.  Source code in particular is highly valuable and takes up very little space.  It is also highly compressible.  The nice part about Git and other <a href="http://en.wikipedia.org/wiki/Distributed_revision_control">distributed revision control software</a>
     </div>
 
     <h2>Assignment</h2>

@@ -58,6 +58,7 @@ div.code {
     width: 50%;
     padding: 10px;
     margin: 20px;
+    text-align: left
 }
 
 form#ruby_input input {
