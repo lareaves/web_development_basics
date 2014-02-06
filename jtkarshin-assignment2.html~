@@ -25,7 +25,7 @@
       <input name="gender" type="radio" id="gender" value="female">Female<br><br>
       <input name="surprise" id="surprise" type="button" value="Click Me" onclick="$('#surpriseDiv').slideToggle();"><br><br>
       <div id="surpriseDiv" style="display: none;">
-        Surprise!
+        Surprise!<br>
       </div>
       <br><input type="submit">
     </form>
