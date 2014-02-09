@@ -78,9 +78,31 @@ else
 document.getElementById("demo").innerHTML=x;
 }
 </script>
-<br>
-<br>
+<br/>
+<br/>
 <form method="post" action="http://symlink.dk/code/php/submit/">
+<br/>
+<br/>
+
+<label for="number">Is you number 7?</label>
+Number:<input id="number" value="7" />
+<button onclick="myFunction()">Submit</button>
+<p id="demo"></p>
+
+<script>
+function myFunction()
+{
+var number;
+if(number==7){
+  demo="Your numer is 7";
+}
+else{
+  demo="Your number is not 7";
+}
+}
+
+</script>
+
   </div>
   
   
