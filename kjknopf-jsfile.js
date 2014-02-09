@@ -1,9 +1,10 @@
-function formVamidate()
+function formValidate()
 {
-    var name = document.forms["assignment2Form"]["name"].value;
-    var score = document.forms["assignment2Form"]["score"].value;
-    var birthday = document.forms["assignmentForm"]["birthdate"].value;
-    var status = document.forms["assignment2Form"]["status"].value;
+
+    var name = $('form assignment2form#name').val();
+    var score = $('form assignment2form#score').val();
+    var birthday = $('form assignment2form#birthdate').val();
+    var status = $('form assignment2form#status').val();
 
     if(name == null || name == "")
     {
