@@ -3,6 +3,21 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  
+   <meta charset="utf-8">
+  <title>animate demo</title>
+  <style>
+  div {
+    position: absolute;
+    background-color: #abc;
+    left: 50px;
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+  }
+  </style>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  
 </head>
 <body>
 
@@ -10,9 +25,20 @@
   <li>It's a button</li>
   <button type="button">Push</button>
   
-  $("animation").click(function(){
-  $("div").animate({left:'500px'});
-}); 
+  <button id="left">&laquo;</button>
+<button id="right">&raquo;</button>
+<div class="block"></div>
+ 
+<script>
+$( "#right" ).click(function() {
+  $( ".block" ).animate({ "left": "+=50px" }, "slow" );
+});
+ 
+$( "#left" ).click(function(){
+  $( ".block" ).animate({ "left": "-=50px" }, "slow" );
+});
+</script>
+  
   </div>
   
 </body>
