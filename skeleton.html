@@ -10,17 +10,9 @@
   <li>It's a button</li>
   <button type="button">Push</button>
   
-  <div id="clickme">
-  Click here
-</div>
-<img id="book" src="book.png" alt="" width="100" height="123">
- 
-// With the element initially hidden, we can show it slowly:
-$( "#clickme" ).click(function() {
-  $( "#book" ).fadeIn( "slow", function() {
-    // Animation complete
-  });
-});
+  $("animation").click(function(){
+  $("div").animate({left:'500px'});
+}); 
   </div>
   
 </body>
