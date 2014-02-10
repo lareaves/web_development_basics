@@ -9,28 +9,37 @@
 		  var formChecker = document.forms["Dom's_form"]["Name"].value;
 		  if (formChecker == null || formChecker =="")
 		  {
-			  alert("Name field cannot be empty.")
+			  alert("Age field cannot be empty.")
+			  return false;
 		  }
 	  }
   </script>
   <script>
 	  function ageValidate()
 	  {
-		  var formChecker = document.forms["Dom's_form"]["age"].value;
+		  var formChecker = document.forms["Dom's_form"]["Age"].value;
 		  if (formChecker == null || formChecker =="")
 		  {
 			  alert("Age field cannot be empty.")
+			  return false;
+		  }
+		  if(formChecker <= 0 || formChecker >= 200)
+		  {
+			  alert("Age outside valid range, please try again.");
+			  return false;
 		  }
 	  }
   </script>
   <script>
 	  function colorValidate()
 	  {
-		  var formChecker = document.forms["Dom's_form"]["color"].value;
+		  var formChecker = document.forms["Dom's_form"]["Color"].value;
 		  if (formChecker == null || formChecker =="")
 		  {
 			  alert("Favorite color field cannot be empty.")
+			  return false;
 		  }
+		  return formChecker;
 	  }
   </script>
   <title>Dominic Pucci's first website.</title>
@@ -44,10 +53,27 @@
 </head>
 <body>
   <div id="content">
-	<p id = firstFormat><b>IS THIS WORKING?!?</b></p>
-	<form name="Dom's_form" method = "post" action = "http://symlink.dk/code/php/submit" onsubmit="return nameValidate">
+	<p id = firstFormat><b>Dominic Pucci: Assignment 2 CS 230</b></p>
+	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit" onsubmit="nameValidate()">
 		<li>Full Name</li>
-		<input type="text"></input>
+		<input type="text" name="Name" id="Name"></input>
+	<br></br>
+	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit" onsubmit="ageValidate()">
+		<li>Age</li>
+		<input type="text" name="Age" id="Age"></input>
+	<br></br>
+	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit" onsubmit="colorValidate()">
+		<li>Favorite Color</li>
+		<input type="text" name="Color" id="Color"></input>
+	<br></br>
+	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit">
+		<li>What kind of person are you?</li>
+		Dog:<input type="checkbox" name="Dog"></input>
+		Cat:<input type="checkbox" name="Cat"></input>
+		<br></br>
+		<input type="submit"></input>
+	</form>
+	<br></br>
   </div>
 </body>
 </html>
