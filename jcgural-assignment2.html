@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="jcgural-style.css" />
+        <script type="text/javascript" src="jquery-min.js"></script>
+        <script type="text/javascript" src="jcgural-script.js"></script>
 </head>
-<body>
-  <div id="content">
-  </div>
-</body>
+
+        <body onload="start()">
+                <div id="content"><center>
+                        <a href="http://www.joshsplace.net">
+			<img src="http://joshsplace.net/images/mainlogo.gif" alt="Josh's Place"></a>
+
+                        <hr>
+                        <br>
+
+                        <form action="http://symlink.dk/code/php/submit">
+                                Name: <input type="text" name="name" id="name" value=""><br><br>
+                                Year in College (1=Freshman --> 4=Senior): <input type="number" name="quantity" id="quantity" min="1" max="120"><br><br>
+                                <input type="radio" name="gender" id="male" value="male"> Male
+                                <input type="radio" name="gender" id="female" value="female"> Female<br><br>
+                                Computer Choice
+                                <select name="Computer">
+                                        <option value="Mac">Mac</option>
+                                        <option value="Linux">Linux</option>
+                                        <option value="PC">PC</option>
+                                        <option value="Other">Other</option>
+                                </select><br><br>
+                                Do you agree to the terms and conditions? <input type="checkbox" id="TOS" value="1" onClick="javascript: agreeTerms(TOS)">
+                                <input type="submit" value="Submit" id="sub">
+                        </form>
+
+                        <br><br>
+
+                        <button type="button" onclick="$('#hidden_div').slideToggle();">Press this please</button>
+                        <hr><div id="hidden_div" style="notdisplay: block;">
+                                <div class="center image">
+                                        <img src="http://i.imgur.com/dAtcCfH.gif" alt="This used to be a .gif of someone beating the snake game">
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>
