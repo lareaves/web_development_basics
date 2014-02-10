@@ -2,30 +2,46 @@
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script-tsmith37.js"></script>
 </head>
 <body>
   <div id="content">
-    <li>this is a button</li>
-    <input type="button" value="click me">
-    <li>check here</li>
-    <form id="check_this" action="javascript:check();">
-      <input type="checkbox" id="is_checked">
+
+    <form name="form1" action="http://symlink.dk/code/php/submit/" onsubmit="return validateForm()" method="post">
+      Do you like dogs? (PROTIP: Check this to continue)<br><input type="checkbox" name="check" value="check">
+	<br>What's your favorite animal?<br> <input type="text" name="name">
+     <br>
+     What's your favorite kind of dog?
+     <select name="breed">
+	<option value="husky">Husky</option>
+	<option value="gshep">German Shepherd</option>
+	<option value="lab">Black Lab</option>
+	<option value="retreiver">Golden Retreiver</option>
+      </select>
+      <br>Which do you prefer?<br>
+      <input type="radio" name="prefer" value="cat">Cat          
+      <input type="radio" name="prefer" value="dog">Dog<br>
+PROTIP: This button will reveal the correct answer
+     
+    <br>
+<button type="button" onclick="$('#hidden_div').slideToggle();">Press me</button>
+    <br>
+<div id="hidden_div"><div class="center_image">
+	<img src="http://6269-9001.zippykid.netdna-cdn.com/wp-content/uploads/2013/09/Dog-Computer-Wallpaper.jpg" alt="This is a dog">
+      </div></div>
+    <br>
+
+	<input type="submit" value="Submit">
     </form>
-    <li>this is a textbox</li>
-    <input type="textbox">
-    <form id="fav_animal" action="javascript:test_dis();">
-      <label for="name">What's your favorite animal?</label><input type="text" name="name" id="name">
-      <input type="submit" value="Press me">
-    </form>
-PROTIP: The right answer is revealed below
+
+<span id="field">
+Yes
 <br>
-    <button type="button" onclick="$('#hidden_div').slideToggle();">Press this please</button>
-    <div id="hidden_div" style="display: block;">
-      <div class="center image">
-	<img src="http://images2.backpage.com/imager/u/medium/78668159/1.jpg" alt="This is a dog">
-      </div>
-    </div>
+</span>
+<br>
+<button type="button" onclick="return domMan()">Change yes to no</button>
+DOM Manipulation
+
   </div>
 </body>
 </html>
