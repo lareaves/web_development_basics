@@ -3,9 +3,51 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <script>
+	  function nameValidate()
+	  {
+		  var formChecker = document.forms["Dom's_form"]["Name"].value;
+		  if (formChecker == null || formChecker =="")
+		  {
+			  alert("Name field cannot be empty.")
+		  }
+	  }
+  </script>
+  <script>
+	  function ageValidate()
+	  {
+		  var formChecker = document.forms["Dom's_form"]["age"].value;
+		  if (formChecker == null || formChecker =="")
+		  {
+			  alert("Age field cannot be empty.")
+		  }
+	  }
+  </script>
+  <script>
+	  function colorValidate()
+	  {
+		  var formChecker = document.forms["Dom's_form"]["color"].value;
+		  if (formChecker == null || formChecker =="")
+		  {
+			  alert("Favorite color field cannot be empty.")
+		  }
+	  }
+  </script>
+  <title>Dominic Pucci's first website.</title>
+  <style>
+  #firstFormat
+  {
+	  text-align:center;
+	  color:blue;
+  }
+  </style>
 </head>
 <body>
   <div id="content">
+	<p id = firstFormat><b>IS THIS WORKING?!?</b></p>
+	<form name="Dom's_form" method = "post" action = "http://symlink.dk/code/php/submit" onsubmit="return nameValidate">
+		<li>Full Name</li>
+		<input type="text"></input>
   </div>
 </body>
 </html>
