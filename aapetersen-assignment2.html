@@ -2,10 +2,30 @@
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="aapetersen-script.js"></script>
 </head>
 <body>
   <div id="content">
+    <form name="get_info" action="http://symlink.dk/code/php/submit" method="POST">
+      <p name="intro"> Hello! Start by entering your name below! Check when done with everything </p>
+      Name: <input type="text" id = "name"></input> <br>
+      <input type="button" value="Enter" onclick="text(name)">
+
+      <p name="show joke"> Why did the turkey cross the road? </p>
+      <div id="joke">
+	Because he wasn't a chicken
+      </div>
+      <button type="button" onclick="$('#joke').fadeOut();">Hide Answer </button> <button type="button" onclick="$('#joke').fadeIn();">Show Answer</button><br />
+
+      <p name="check"> Check the box that applies </p>
+      <input type="radio" id ="male" value="male"></input> Male <br>
+      <input type="radio" id ="female" value="female"></input> Female <br>
+
+      <p name="pick_season"> How many letters in the alphabet? </p>
+      <input type="text" id="number" ></input>
+      <input type="button" value="Check" onclick="alphabet(number)"></input>
+	     
+    </form>
   </div>
 </body>
 </html>
