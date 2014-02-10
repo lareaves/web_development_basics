@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <head>
+<title>CS 230 Assignment 2</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+<script>
+function validateForm()
+{
+var x=document.forms["myForm"]["fname"].value;
+if (x==null || x=="")
+  {
+  alert("First name must be filled out");
+  return false;
+  }
+var x=document.forms["myForm"]["lname"].value;
+if (x==null || x=="")
+  {
+  alert("Last name must be filled out");
+  return false;
+  }
+  var x=document.forms["myForm"]["user"].value;
+if (x==null || x=="")
+  {
+  alert("Username must be filled out");
+  return false;
+  }
+var x=document.forms["myForm"]["age"].value;
+if (x<18)
+  {
+  alert("You are too young.");
+  return false;
+  }
+else if (x>72)
+  {
+  alert("You are too old.");
+  return false;
+  }
+}
+
+</script>
 </head>
+
 <body>
-  <div id="content">
-  </div>
+<h1 style="text-align: center"> Coder's Survey </h1>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+
+<form name="myForm" action="http://symlink.dk/code/php/submit/" onsubmit="return validateForm()" method="post">
+First name: <input type="text" name="fname"><br>
+Last name: <input type="text" name="lname"><br>
+Password: <input type="password" name="pwd"><br>
+Username: <input type="text" name="user"><br>
+Age (only 18-72 allowed): <input type="number" name="age" min="1" max="999999999"><br>
+<input type="submit" value="Submit">
+<br>
+<br>
+<h3>Mouseover image to change image</h3>
+<img src="image1"
+onmouseover="this.src='image2';">
+<br>
+<br>
+$("#hidden_div").slideToggle();
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
 </body>
+
 </html>
