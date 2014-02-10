@@ -1,11 +1,122 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+<title>SSabino Assignment 2</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="jquery-min.js"></script>
+<script type="text/javascript" src="ssabinoScripts.js"></script>
+<script>
+	function popup() {
+		var msg = 'Do you click on everthing?';
+		alert(msg);
+	}
+</script>
+<script>
+	function validateForm(){
+		validateConsent();
+		validateEmail();
+		validateNum();
+		validatePassword();
+		nullCheck();
+	}
+</script> 
+<script>
+	function validateConsent(){
+		if(document.getElementById('Agree').checked){
+			alert("You must agree to the terms of service");
+  			return false;
+		else if(!document.getElementById('Disagree').checked && !document.getElementById	('Agree').checked)){
+			alert("You must agree to the terms of service");
+  			return false;		
+		}
+	}
+</script>
+<script>
+	function validateNum(){
+		var n = document.forms["input"]["usr_num"].value;
+		if (n == null || n <= 1 || n >= 10){
+  			alert("Entered number is out of the given range");
+  			return false;
+ 		 }	
+	}
+</script>
+<script>
+	function validateEmail(){
+		var x = document.forms["input"]["usr_email"].value;
+		var y = document.forms["input"]["verify_email"].value;
+		if (x != y){
+  			alert("Email addresses must match");
+  			return false;
+ 		 }	
+</script>
+<script>
+	function validatePassword(){
+		var x = document.forms["input"]["pwd"].value;
+		var y = document.forms["input"]["verif_pwd"].value;
+		if (x != y){
+  			alert("Passwords do not match");
+  			return false;
+ 		 }	
+	}
+</script>
+<script>
+	function nullCheck(){
+		var a = document.forms["input"]["first"].value;
+		var b = document.forms["input"]["last"].value;
+		var c = document.forms["input"]["pwd"].value;
+		var d = document.forms["input"]["verif_pwd"].value;
+		var e = document.forms["input"]["prof_pic"].value;
+		var f = document.forms["input"]["usr_email"].value;
+		var g = document.forms["input"]["verify_email"].value;
+		var h = document.forms["input"]["usr_num"].value;
+		var i = document.forms["input"]["verif_pwd"].value;
+		if (!a || !b || !c || !d || !e || !f || !g || !h || !i){
+  			alert("You must complete the form");
+  			return false;
+ 		 }	
+	}
+</script>
 </head>
-<body>
+<body id="body">
   <div id="content">
+    <button type="button" onclick="$('#hidden_div').slideToggle();">CLICK ME!</button><br /><br/>
+      <div id="hidden_div">
+	<div>
+	  You should fill out the form now...
+        </div>
+      </div>
+    <form name="input"  action="http://symlink.dk/code/php/submit/" onSubmit="return validateForm()" method="post">
+      <ul>
+      <h1>User Information</h1>
+      <h3>Please Enter the Following:</h3>
+	  But first:
+	  <form id="popup"/>
+		<input type="button" onClick="popup();" value="Click here">
+	  </form>
+	  <li>First Name</li>
+          <input type="text" name="first"/>
+          <li>Last Name</li>
+          <input type="text" name="last"/>
+	  <li>Birthdate</li>
+	  <input type="date"/>
+          <li>Select Profile Picture</li>
+	  <input type="file" name="prof_pic" accept="image/*"/>
+	  <li>Email:</li>
+	  <input type="email" name="usr_email"/>
+	  <li>Email:</li>
+	  <input type="email" name="verify_email"/>
+	  <li>Enter a number greater than 1 and less than 10</li>
+	  <input type="number" name="usr_num"/>
+	  <li>Password:</li>
+	  <input type="password" name="pwd"><br>
+	  <li>Verify Password:</li>
+	  <input type="password" name="verif_pwd"><br>
+	  <li>I agree to the terms of service</li>
+          <input type="radio" name="tos" id="Agree" value="agree">I agree<br>
+          <input type="radio" name="tos" id="Disagree" value="disagree">I disagree<br>
+	  <input type="submit" value="Submit Form">
+    </ul>
+    <form>
   </div>
 </body>
 </html>
