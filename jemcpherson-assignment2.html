@@ -1,11 +1,38 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="jemcpherson_style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="jemcpherson_script.js"></script>
+  <title>Joshua McPherson Assignment 2</title> 
 </head>
 <body>
   <div id="content">
+  <h3>Joshua McPherson Assignment 2</h3>
+  
+  <form id="input" action="http://symlink.dk/code/php/submit/" onsubmit="return validate();" method="post" >
+	<ul>
+	  <div class="left">
+	    <li>Please select a color.</li>
+	    <input type="color" id="color" name="color"/>
+	    <li>Please enter your email.</li>
+	    <input type="email" id="email" name="email"/>
+	    <li>Please give a number between 1 and 10.</li>
+	    <input type="number" id="number" name ="number"/>
+		<li>Please enter some text.</li>
+	    <input type="text" id="text" name ="text"/>
+	    <li>submit</li>
+	    <input type="submit"/>
+	  </div>
+	  <div class="clear"></div>
+	</ul>
+  </form>
+  
+  <div id="hideMe">
+	The quick brown fox jumped over the lazy dog.
   </div>
+  <button type="button" onclick="$('#hideMe').fadeOut();">Hide Text </button> <button type="button" onclick="$('#hideMe').fadeIn();">Show Text</button><br />
+  <button type="button" onclick="$('#input').remove();">Delete Form</button>
+  
 </body>
 </html>
