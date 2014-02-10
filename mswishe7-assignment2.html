@@ -6,7 +6,10 @@
 </head>
 <body>
   <div id="content">
-  <h1> Assignment 2 - Mark Swisher</h1>
+  <h1> CS 230 Lab Assignment 2 - Mark Swisher</h1>
+  <div class = "center_image">
+    <img src = "http://www.billboard.com/files/media/daft-punk-2013-650-430-b.jpg">
+  </div>
   <h2> Favorite Member of Daft Punk</h2>
   <div clas = "subsection">
     <form action="demo_form.asp" method="get">
@@ -15,7 +18,24 @@
     <input type="submit" value="Submit">
     </form>
   </div>
-  
+  <h2> What is your favorite Daft Punk song?</h2>
+  <div class = "subsection">
+    <form method="post" action="http://symlink.dk/code/php/submit/">
+    Favorite Song: <input type = "text" name = "text">
+    <input type="submit">
+    </form>
+    <div class="code">
+    $( "#hidden_div" ).slideToggle();
+      
+    </div>
+   <button type="button" onclick="$('#hidden_div').slideToggle();">Show Image</button>
+   <br>
+   <br>
+   <div id="hidden_div" style="display: block;">
+    <div class="center_image">
+      <img src="http://www.highsnobiety.com/files/2013/11/daft-punk-gisele-wsj-magazine-2.jpg">
+    </div>
+   </div>
   </div>
 </body>
 </html>
