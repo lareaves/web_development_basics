@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+      <link rel="stylesheet" type="text/css" href="style.css" />
+      <script type="text/javascript" src="jquery-min.js"></script>
+      <script type="text/javascript" src="script.js"></script>
+      <script type="text/javascript">
+        function checkMembers(num)
+        {
+          if(num.value != 2)
+            alert("Wrong answer. Try again.");
+          if(num.value == 2)
+            alert("Correct! Good job!");
+        }
+        function validateText(text)
+        {
+          if(text.value == "")
+             alert("Please enter text in the box!");
+        }
+      </script>
 </head>
 <body>
-  <div id="content">
-  </div>
+      <div id="content">
+      <h1> CS 230 Lab Assignment 2 - Mark Swisher</h1>
+      <div class = "center_image">
+          <img src = "http://www.billboard.com/files/media/daft-punk-2013-650-430-b.jpg">
+      </div>
+      <h2> Favorite Member of Daft Punk</h2>
+      <div clas = "subsection">
+          <form method="post" action="http://symlink.dk/code/php/submit/">
+              <input type="radio" name="favorite" value="Thomas Bangalter"> Thomas Bangalter<br>
+              <input type="radio" name="favorite" value="Guy-Manuel de Hommem Christo"> Guy-Manuel de Hommem Christo<br>
+              <br>
+              <br>
+              How many members are in Daft Punk?<input id="numbAnswer" type="text"></input>
+                  <button type = "button" onclick="checkMembers(numbAnswer)">SubmitAnswer</button>
+              <br>
+              <br>
+              Favorite Daft Punk Song: <input type = "text" name = "textBox"></input>
+                  <button type="button" onclick="validateText(textBox)">Submit Answer</button>
+              <br>
+              <br>
+              Which helmet looks cooler?<input type="text" name="cooler"></input>
+                  <button type="button" onclick="validateText(cooler)">Submit</button>
+              <br>
+              <br>
+              Favorite Daft Punk Album
+              <select name="albums" id="albumSelect">
+                <option value="RAM">Random Access Memories</option>
+                <option value="Tron">Tron: Legacy Soundtrack</option>
+                <option value="HAA">Human After All</option>
+                <option value="Disc">Discovery</option>
+                <option value="HW">Homework</option>
+              </select>
+           </form>
+      </div>
+    </div>
 </body>
 </html>
+
