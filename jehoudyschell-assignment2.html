@@ -29,33 +29,39 @@
 	return valid;
 }
 </script>
-  <div id="content"><div id="hidden_div"><div class="note">
-	  <img href="http://inchikutty13.files.wordpress.com/2013/12/thumbs-up-smiley-face.jpg"></img>
-      </div></div>
+  <div id="content"><div id="hidden_div">
+	  <img src="http://inchikutty13.files.wordpress.com/2013/12/thumbs-up-smiley-face.jpg" height = "100" width = "130"></img>
+      </div>
       <button type="button" onclick="$('#hidden_div').slideToggle();">Run slideToggle()</button><br /><br />
-      <div id ="error"></div>
-    <form action="http://symlink.dk/code/php/submit" method="post">
-      <textarea name ="Name" id="Name" rows="1" cols="30">First/last name here
-      </textarea>
-      <li>Gender</li>
+      <div id="error"></div>
+    <form action="http://symlink.dk/code/php/submit" method="post" onsubmit="return validate();">
+      <textarea name="Name" id="Name" rows="1" cols="30">First/last name here</textarea>
+	    <br />
+      Gender
       <select name="Gender" id="Gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select>
-      <li>Birthday</li>
-	    <input name="Birthday" id="Birthday" type="date" />
-	    <li>Courses taking</li>
 	    <br />
-	    <li>CS 110</li>
+      Birthday
+	    <input name="Birthday" id="Birthday" type="date" />
+	    <br /><br />
+	    Courses taking
+	    <br />
+	    CS 110
 	    <input name="class" value="cs110" type="checkbox" />
-	    <li>CS 111</li>
+	    <br />
+	    CS 111
 	    <input name="class" value="cs111" type="checkbox" />
-	    <li>CS 210</li>
+	    <br />
+	    CS 210
 	    <input name="class" value="cs210" type="checkbox" />
-	    <li>CS 230</li>
+	    <br />
+	    CS 230
 	    <input name="class" value="cs230" type="checkbox" />
 	    <br />
-	    <input type="submit" onclick ="validate()"/>
+	    <br />
+	    <input type="submit" />
     </form>
   </div>
 </body>
