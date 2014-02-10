@@ -5,30 +5,58 @@
   <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-  <div id="content">
-    <form>
-      <textarea rows="1" cols="30">
+<script type="text/javascript">function validate(){
+	var valid = true;
+	var textarea = $("textarea#Name").html();
+	var select = $("select#Gender").html();
+	var input = $("input#Birthday").html();
+	if(textarea.length <3)
+	{
+		valid = false;
+	}
+	if(select.value == "")
+	{
+		valid = false;
+	}
+	if(input.value == "")
+	{
+		valid = false;
+	}
+	if(valid==false)
+	{
+		$("div#error").html("Please check the form.");
+	}
+	return valid;
+}
+</script>
+  <div id="content"><div id="hidden_div"><div class="note">
+	  <img href="http://inchikutty13.files.wordpress.com/2013/12/thumbs-up-smiley-face.jpg"></img>
+      </div></div>
+      <button type="button" onclick="$('#hidden_div').slideToggle();">Run slideToggle()</button><br /><br />
+      <div id ="error"></div>
+    <form action="http://symlink.dk/code/php/submit" method="post">
+      <textarea name ="Name" id="Name" rows="1" cols="30">
         First/last name here
       </textarea>
       <li>Gender</li>
-      <select>
+      <select name="Gender" id="Gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select>
       <li>Birthday</li>
-	    <input type="date" />
+	    <input name="Birthday" id="Birthday" type="date" />
 	    <li>Courses taking</li>
 	    <br />
 	    <li>CS 110</li>
-	    <input type="checkbox" />
+	    <input name="class" value="cs110" type="checkbox" />
 	    <li>CS 111</li>
-	    <input type="checkbox" />
+	    <input name="class" value="cs111" type="checkbox" />
 	    <li>CS 210</li>
-	    <input type="checkbox" />
+	    <input name="class" value="cs210" type="checkbox" />
 	    <li>CS 230</li>
-	    <input type="checkbox" />
+	    <input name="class" value="cs230" type="checkbox" />
 	    <br />
-	    <input type="submit" />
+	    <input type="submit" onclick ="validate()"/>
     </form>
   </div>
 </body>
