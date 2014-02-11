@@ -8,7 +8,7 @@
 </head>
 <body>
   <div id="content">
-  <form name="assignment2form" method="POST" action="http://symlink.dk/code/php/submit">
+  <form name="assignment2form" method="POST" onsubmit="return formValidate()" action="http://symlink.dk/code/php/submit">
     Name: <input type="text" name="name"><br>
     Status: Freshman <input type="radio" name="status" value="Freshman">
     Sophomore: <input type="radio" name="status" value="Sophomore">
