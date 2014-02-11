@@ -8,7 +8,7 @@
 </head>
 <body>
   <div id="content">
-  <form method="POST" action="http://symlink.dk/code/php/submit">
+  <form name="assignment2form" method="POST" action="http://symlink.dk/code/php/submit">
     Name: <input type="text" name="name"><br>
     Status: Freshman <input type="radio" name="status" value="Freshman">
     Sophomore: <input type="radio" name="status" value="Sophomore">
@@ -18,6 +18,10 @@
     Birthdate: <input type="date" name="birthdate"><br>
     <input type="submit" value="Submit Form">
     </form>
-</div>
+  <button type="button" onclick="$('hidden_div').slideToggle();">Run slideToggle()</button><br>
+  </div>
+  <div id="hidden_div">
+    This is hidden text!
+  </div>
 </body>
 </html>
