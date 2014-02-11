@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <head>
+  <title>CS 230- James Harr Submission</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="jaharrscript.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script> 
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("div").animate({left:'250px'});
+      });
+    });
+  </script> 
 </head>
 <body>
   <div id="content">
+    <form name="my_form" id="myform"  method="post" action="http://symlink.dk/code/php/submit">
+      Age?:<br>
+      <input type="text" id="age"></input> <br>
+      Gender?:<br>
+      <input type="radio" name="gender" id="m" value="male"></input> MALE <br>
+      <input type="radio" name="gender" id="f" value="fmale"></input> FEMALE <br>
+      E-Mail?:<br>
+      <input type="email" id="email" name="EMAIL!"> <br>
+      WHAT, is your favorite color?:<br>
+      <input type="color" name="color"> <br>
+      <input type="button" value="SUBMIT!" onclick="validate(age,m,f,email)"></input>
+      <input type="submit" style="display:none" id="submit"> <br>
+    </form>
+  </div>
+  <button id="button">Animation!</button>
+  <div 
+    style="background:#FF0303;height:100px;width:100px;position:absolute;">
   </div>
 </body>
 </html>
