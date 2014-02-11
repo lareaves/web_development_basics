@@ -3,9 +3,32 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <style>
+    h1{ 
+    border: #999 1px dashed;
+    font-family: Arial;
+    font-size: 20px;
+    background: #333;
+    color: red;
+    }
+    h1:hover{
+    background: #6F8A00;
+    color: white;
+    }
+    </style>
 </head>
 <body>
+<h1>Lab 1</h1>
   <div id="content">
+    <form action="http://symlink.dk/code/php/submit" method="post">
+      <p>
+	<input type="checkbox" name="var1" value="A"><br>
+	<input type="radio" name="var2" value="">
+	<input type="radio" name="var2" value=""><br>
+	<input type="text" name="var3" value="Enter text here"><br>
+	<input type="button" name="var4" value="Button"><br>
+	</p>
+      </form>
   </div>
 </body>
 </html>
