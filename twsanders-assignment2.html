@@ -8,15 +8,21 @@
   <script>
   
   funtion validateForm() {
-    var validate = document.forms["assignment2"]["userName"].value;
-    if (validate=null || validate="") {
+    var validate= document.forms["assignment2"]["name"].value;
+    if (validate==null || validate=="") {
       alert("You must provide your name.");
       return false;
     }
     
-    var didYouSelect = document.forms["assignment2"]["val"].value
-    if (didYouSelect="-1"){
+    var didYouSelect = document.forms["assignment2"]["val"].value;
+    if (didYouSelect=="-1"){
       alert("Please provide a favorite college!");
+      return false;
+    }
+    
+    var age= document.forms["assignment2"]["age"].value;
+    if (age == null || age <= 0 ){
+      alert("You must enter a valid age!");
       return false;
     }
   }
@@ -28,15 +34,18 @@
   <div id="content">
     
     <form name="assignment2" onSubmit="return validateForm()" form action="http://symlink.dk/code/php/submit/" method="POST">
-     
+    
+    <h1>Assignment 2</h1>
+    
+    </br>
     Please enter your full name: </br>
-    <input type="text" userName="name"><br>
+    <input type="text" name="name">
     </br>
     
+    What is your age?</br>
+    <input type="text" name="age">
+    </br>
      
-     // number entry
-     
-    
     Select Your Favorite College From The List: 
     </br>
     <select name="Favorite College">
