@@ -1,11 +1,94 @@
 <!DOCTYPE html>
+<!--You will be building a interactive web page in order to learn to use Git, and also practice your HTML, CSS, and Javascript skills.
+ After forking the repository that contains the source for the assignment and lecture, you will start by copying the provided skeleton web page. 
+ You must name this copy as "mix_user_name-assignment2.html", and check it into the repository before making any changes. If you add any CSS or Javascript
+ (hint: you will at least need Javascript), please make a separate file for new code. I will walk you through this below. The filenames for any javascript
+ and css must also contain your mix user name, but can otherwise be named as you wish. You may still use the existing files as well, but you should not
+ modify them. You'll need to include any new files as appropriate in the <head> section. This assignment will be submitted via github as a pull request.
+
+Your web page must have a form can collect any type of information, but it must meet these requirements:
+The form must submit at least 4 different variables, using 4 different types of input (not necessarily <input> tags).
+At least 3 of the form variables must be required via Javascript validation.
+One variable must be validated for something besides existance (for example, a number that has to be within a certain range).
+Your action should be "http://symlink.dk/code/php/submit" and your method should be POST so I can easily verify you have correctly submitted the form.
+Your page should have at least one animation that can be activated with a button.
+You must manipulate the DOM. You can do this via a button, by showing an error message in a div, or however you would like to activate it. Just make it clear so I don't miss it.
+
+You may use any of the code provided, and the skeleton includes jquery, script.js, and style.css. If you are able to figure out how to use it, you are 
+allowed to use the JQuery Validation Plugin(http://jqueryvalidation.org/) to perform your form validation.-->
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
+
+<script>
+function validation()
+	{
+		var x = document.forms["form1"]["handle"].value
+		if (x=='')
+			{		
+			alert('You must supply a name');
+			return false;
+			}
+		var x = document.forms["form1"]["age"].value
+		if (x < 18)
+			{
+			alert('You must be 18');
+			return false;
+			}
+		var x = $('input[name=affiliation]:checked').length >0
+		if (x == false)
+			{
+			alert('Please select an affiliation.');
+			return false;
+			}
+		var x = $('input[name=elections]:checked').length >0
+		if (x == false)
+			{
+			alert('Please select prior elections.  If you have not voted before select "Have not voted"');
+			return false;
+			}
+		
+	}
+</script>
+	<header >
+		<center>
+		<font size=16>CS230 Assignment 2<br>
+		</font>Joshua Suess
+		</center>
+	</header>
 <body>
   <div id="content">
-  </div>
+	<form name="form1" action="http://symlink.dk/code/php/submit/" method="post" onsubmit="return validation()" >
+		Name: <input type="text" name="handle" ><br>
+		Age: &nbsp <input type="number"  name="age"><br><br>
+	
+	
+		What is your party affiliation?<br />
+		<input type="radio" id="dem" name="affiliation" value="Democrat">Democrat
+		<input type="radio" id="rep" name="affiliation" value="Republican">Republican
+		<input type="radio" id="nei" name="affiliation" value="Neither">Neither<br><br>
+	
+	
+		Which elections have you voted in?<br>
+		<input type="checkbox" name="elections" value="2004">2004
+		<input type="checkbox" name="elections" value="2006">2006
+		<input type="checkbox" name="elections" value="2008">2008
+		<input type="checkbox" name="elections" value="2010">2010
+		<input type="checkbox" name="elections" value="2012">2012
+		<input type="checkbox" name="elections" value="2014">2014
+		<input type="checkbox" name="elections" value="NONE">Have not voted<br><br>
+	
+		Will you vote again?
+		<select name="again"> type="text">
+		<option value="yes">Yes</option>
+		<option value="no">No</option>
+		<option value="maybe">Maybe</option>
+		<option value="idk">I don't know</option><br>
+		
+		<br><input type="submit" value="Submit">
+	</form>
+</div>
 </body>
 </html>
