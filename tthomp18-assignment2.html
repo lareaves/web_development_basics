@@ -1,11 +1,69 @@
 <!DOCTYPE html>
+<html>
 <head>
+  <title>Troy's Webpage</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  
+  <script>
+  function numRange()
+  {
+  var x=document.forms["range"]["number"].value;
+  if(x<1 || x>10 || x==null || x=="")
+  {
+  alert("Number out of range");
+  return false;
+  }
+  }
+  </script>
+  
 </head>
 <body>
   <div id="content">
+	<h1>This is my webpage</h1>
+	
+	<form name="range" id="test_range" method="post" action="http://symlink.dk/code/php/submit/" onsubmit="return numRange();">
+	Please Enter a Number Between 1 and 10
+	</br>
+	<input type="number" name="number">
+	<input type="submit" value="Test">
+    </form>
+	</br>
+	
+	<form name="status" method="post" action="http://symlink.dk/code/php/submit/">
+	Please Select Your Class Status
+	</br>
+	<select name="class">
+	  <option value="Freshman">Freshman</option>
+	  <option value="Sophomore" selected="selected">Sophomore</option>
+	  <option value="Junior">Junior</option>
+	  <option value="Senior">Senior</option>
+	</select>
+	<input type="submit" />
+      </form>
+	  </br>
+	  
+	  <form name="password" method="post" action="http://symlink.dk/code/php/submit/">
+	  Please Enter a Password
+	  </br>
+	  <input type="password" name="Password">
+	  <input type="submit" />
+	  </form>
+	  </br>
+	  
+	  <form name="dob" method="post" action="http://symlink.dk/code/php/submit/">
+	  Please Enter Date of Birth
+	  </br>
+	  <input type="date" name="DOB">
+	  <input type="submit" />
+	  </form>
+	  </br>
+    
+	<button type="button" onclick="$('#hidden_div').slideToggle();">Push if You Dare</button><br /><br />
+      <div id="hidden_div">
+	  <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/007/cache/spider-monkey_719_600x450.jpg"/></div>
+	  </div>
   </div>
 </body>
 </html>
