@@ -1,11 +1,136 @@
 <!DOCTYPE html>
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({
+      left:'250px',
+      height:'+=100px',
+      width:'+=100px'
+    });
+  });
+});
+</script> 
+
+<script>
+
+function button1()
+{
+var x=document.forms["uname"]["username"].value;
+if (x==null || x=="")
+  {
+  alert("ERROR. UserName Cannot Be Blank");
+  return false;
+  }
+}
+
+function button2()
+{
+var x=document.forms["pass"]["password"].value;
+if (x==null || x=="")
+  {
+  alert("ERROR. Password Cannot Be Blank");
+  return false;
+  }
+}
+
+function button3()
+{
+var x=document.forms["game"]["game"].value;
+if (x!="win")
+  {
+  alert("You LOSE");
+  return false;
+  }
+}
+
+function button4()
+{
+var x=document.forms["testnum"]["test"].value;
+if (x==null || x=="" || x>10 || x<1)
+  {
+  alert("ERROR. Invalid Entry");
+  return false;
+  }
+}
+
+
+</script>
+
 </head>
 <body>
-  <div id="content">
-  </div>
+  <div id="content" class = "left">
+  <br/>
+	<form name="submit" id="search" action="http://symlink.dk/code/php/submit/" method ="post">
+	    Begin Search
+		</br>
+	    <input type="search" name = "search">
+		<input type="submit" value ="Search">
+		</br>
+		</br>
+		</form>
+
+		<form name="uname" onsubmit="return button1();" action="http://symlink.dk/code/php/submit/" method="post">
+	    Enter UserName
+		</br>
+		<input type="username" name ="username">
+		<input type="submit" value ="Submit">
+		</br>
+		</br>
+		</form>
+
+		<form name ="pass" id="password" onsubmit="return button2();" action="http://symlink.dk/code/php/submit/" method="post">
+	    Enter Password
+		</br>
+	    <input type="password" name = "password">
+		<input type="submit" value ="Submit">
+		</br>
+		</br>
+		</form>
+
+
+                <form name ="game" onsubmit="return button3();" action="http://symlink.dk/code/php/submit/" method="post">
+	    Enter "win"
+		</br>
+	    <input type="search" name = "game">
+		<input type="submit" value ="Submit">
+		</br>
+		</br>
+		</form>
+
+
+
+		<form name="testnum" id="test_form" onsubmit="return button4();" action="http://symlink.dk/code/php/submit/" method ="post">
+		<label for="test">Enter a Number Between 1 & 10</label>
+		</br>
+		<input type="number" name="test" id="test">
+		<input type="submit" value="Test">
+		</form>
+
+	    </br>
+	
+
+                </head>
+ 
+                <body>
+                <button>Start Animation</button>
+                <div style="background:#3160FF; height:150px; width:150px; position:absolute;">
+                </div>
+
+                </body>
+
+
+
+
+
 </body>
 </html>
+
+
