@@ -1,11 +1,148 @@
 <!DOCTYPE html>
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-  <div id="content">
-  </div>
-</body>
+<html>
+  <head>
+    
+    <object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 100%; height: 0px; display: block; position: absolute; z-index: 99999; top: 0px;"></object>
+    
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="jquery-min.js"></script>  
+    <meta charset="utf-8">
+    <title>abelcas2-assignment 2</title>
+    <style>
+      
+      div.circle {
+      position: absolute;
+      background-color: #FF0000;
+      left: 50px;
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px; 
+      }
+      
+    </style>
+    
+  </head>
+  <body>
+    <div id="content">
+      <br />
+      It's a button
+      <button type="button">Push</button>
+      <br />
+      Animation
+      <button id="left">&laquo;</button>
+      <button id="right">&raquo;</button>
+      <div class="circle"></div>
+      
+      <script>
+	$( "#right" ).click(function() {
+	$( ".circle" ).animate({ "left": "+=50px" }, "slow" );
+	});
+	
+	$( "#left" ).click(function(){
+	$( ".circle" ).animate({ "left": "-=50px" }, "slow" );
+	});
+      </script>
+      <br>
+      <br>
+      
+      <br>
+      
+      <p>Click the button to display a confirm box.</p>
+      
+      <button onclick="myFunction()">Try it</button>
+      
+      <script>
+	function myFunction()
+	{
+	var x;
+	var r=confirm("Press a button!");
+	if (r==true)
+	{
+	x="You pressed OK!";
+	}
+	else
+	{
+	x="You pressed Cancel!";
+	}
+	document.getElementById("demo").innerHTML=x;
+	}
+      </script>
+      <br>
+      <br>
+      <form method="post" action="http://symlink.dk/code/php/submit/" onsubmit="return validate();">
+	<label for="number">Is you number 7?</label>
+	<br/>
+	
+	Number:<input id="number" name="number" value="7" />
+	
+	<br/>
+	
+	<input type="radio" name="radio" value="radio 1" />radio 1<br />
+
+	<input type="radio" name="radio" value="radio 2" />radio 2<br />
+	<label for="first">First Name?</label><br />
+	First:<input id="first" name="first" value="" /> <br/>
+	<label for="last">Last Name?</label><br />
+	Last:<input id="last" name="last" value="" /><br/>
+	
+	<input type="submit" />
+
+
+      </form>
+      <p id="demo"></p>
+    
+
+    </div>
+    
+    <script>
+      function validate()
+
+      {
+      return validateExistence("first") && validateExistence("last") && validateSeven();
+      }
+
+      function validateExistence(tagName)
+
+      {
+      var valid = false;
+      
+
+
+
+      var name = $('input#' + tagName).val();
+
+      if(name!=""){
+      valid = true;
+      }
+      else{
+      $("p#demo").html("Your field is empty");
+      }
+
+      return valid;
+      }
+
+
+
+      function validateSeven()
+      
+      {
+      var valid = false;
+      var number = $('input#number').val();
+      
+      if(number==7){
+      valid = true;      
+      }
+      else{
+      $("p#demo").html("Your number is not 7");
+      }
+
+      return valid;      
+      
+      }
+    </script>      
+  </body>
 </html>
