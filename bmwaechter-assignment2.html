@@ -3,9 +3,18 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="bmwaechter-script.js"></script>
 </head>
 <body>
   <div id="content">
+    <form name="myForm" action="http://symlink.dk/code/php/submit" method="post" onsubmit="validate()">
+      Name:<input type="text" name="name"><br>
+      Email:<input type="email" name="email"><br>
+      Password:<input type = "password" name = "pass"><br>
+      Confirm Passord:<input type = "password" name = "passConf"><br>
+      <input type="submit" value ="Submit" name="sub"> 
+       <input type="checkbox" name ="chkbx">I would like to recive more information via email<br>
+    </form>
   </div>
 </body>
 </html>
