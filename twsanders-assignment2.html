@@ -1,11 +1,94 @@
 <!DOCTYPE html>
 <head>
+  <title>Assignment 2- Thomas Sanders</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  
+  <script>
+  
+  funtion validateForm() {
+    var validate= document.assignment2.name.value;
+    if (validate==null || validate=="") {
+      alert("You must provide your name.");
+      return false;
+    }
+    
+    var didYouSelect = document.assignment2.val.value;
+    if (didYouSelect=="-1"){
+      alert("Please provide a favorite college!");
+      return false;
+    }
+    
+    var age= document.forms.assignment2.age.value;
+    if (age == null || age <= 0 ){
+      alert("You must enter a valid age!");
+      return false;
+    }
+    
+    var checked=0
+    if (document.getElementById('male').checked)
+      checked=1;
+    if (document.getElementById('male').checked)
+      checked=1;
+    if (checked == 0) {
+      alert ("You must select a gender.")
+      return false;
+    }
+    
+  }
+    
+  </script>
+  
 </head>
 <body>
   <div id="content">
+    
+    <form name="assignment2" onSubmit="return validateForm()" form action="http://symlink.dk/code/php/submit/" method="POST">
+    
+    <h1>Assignment 2</h1>
+    </br>
+    
+    Please enter your full name: </br>
+    <input type="text" name="name">
+    </br></br>
+    
+    What is your age?</br>
+    <input type="number" name="age">
+    </br></br>
+    
+    When is your birthday?</br>
+    <input type="date">
+    </br></br>
+     
+    Select Your Favorite College From The List: 
+    </br>
+    <select name="Favorite College">
+      <option val="-1" selected>[choose yours]</option>
+      <option val="1">WVU</option>
+      <option val="2">Pittsburgh</option>
+      <option val="3">Marshall</option>
+      <option val="4">Other</option>
+    </select>
+    </br></br>
+    
+    Please select your gender:</br>
+    <input type="radio" name="sex" id="Male" value="male">Male<br>
+    <input type="radio" name="sex" id="Female" value="female">Female<br>
+    </br></br>
+    
+    <button type="button" onclick="$('#hidden_div').slideToggle();">You'll Like This</button><br /><br/>
+      <div id="hidden_div">
+        <div>
+          YOU"RE DONE!
+        </div>
+    
+        <input type="submit" value="Submit">
+        
+    </form>
+    
   </div>
+  
 </body>
+
 </html>
