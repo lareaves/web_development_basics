@@ -33,7 +33,8 @@
     <form name="assignment2" onSubmit="return validateForm()" form action="http://symlink.dk/code/php/submit/" method="POST">
      
     Please enter your full name: </br>
-    Name: <input type="text" userName="fname"><br>
+    
+    Name: <input type="text" userName="name"><br>
     </br>
     
      
@@ -53,8 +54,11 @@
     
     </br></br>
     
-    <button type="button" onClick="$('#hidden_div').slideToggle();">This Is Only Here For Credit</button>
-      </br>
+    <button type="button" onclick="$('#hidden_div').slideToggle();">You'll Like This</button><br /><br/>
+      <div id="hidden_div">
+        <div>
+          YOU"RE DONE!
+        </div>
     
         <input type="submit" value="Submit">
     </form>
