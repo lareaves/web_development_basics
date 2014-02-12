@@ -3,9 +3,26 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+
 </head>
 <body>
   <div id="content">
+	<form action = "http://symlink.dk/code/php/submit/" method = "post">
+	<input type = "text" name="name" >
+	<br/>
+	chev
+	<input type = "checkbox" name="car" value = "chev" ><br/>
+	ford
+	<input type = "checkbox" name="car" value = "ford" ><br/>
+	red
+	<input type = "radio" name="color" value = "red" ><br/>
+	blue
+	<input type = "radio" name="color" value = "blue" ><br/>
+	Learn more at <a href="http://www.cars.com">Vist cars.com</a> <br/>
+	<button type = "button" onclick = "animation()">Start Animation</button><p>
+	<div style = "background: none repeat scrool 0% 0% rgb(152, 191,33); height: 100px; position: absolute; left 250 px;">
+	<input type = "submit" name="submit" value = "Submit" id = "submit">
+	</form>
   </div>
 </body>
 </html>
