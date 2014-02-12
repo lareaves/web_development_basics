@@ -1,0 +1,12 @@
+#myBox {
+	/* simple box */
+	position:absolute;
+	top:27em;
+	left:20em;
+	width:3em;
+	line-height:3em;
+	background:#000000;
+	border:1px solid #000000;
+	white-space:nowrap;
+	padding:0.5em;
+}
