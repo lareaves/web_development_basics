@@ -31,12 +31,16 @@
       checked=1;
     if (document.getElementById('male').checked)
       checked=1;
-    if (document.getElementById('male').checked && document.getElementById('female').checked)
-      alert("You cannot be two genders!")
     if (checked == 0) {
       alert ("You must slect a gender.")
       return false;
     }
+    
+  }
+  
+  function yourFavoriteCollegeShouldAlwaysBe() {
+    
+    document.getElementById("val").innerHTML="1";
   }
     
   </script>
@@ -72,6 +76,9 @@
       <option val="4">Other</option>
     </select>
     </br></br>
+    
+    This is the DOM Manipulation:</br>
+    yourFavoriteCollegeShouldAlwaysBe();
     
     Please select your gender:</br>
     <input type="radio" name="sex" id="Male" value="male">Male<br>
