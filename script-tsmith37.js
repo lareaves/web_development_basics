@@ -37,17 +37,47 @@ function test_counter() {
 }
 
 function test_dis() {
-    var response = 'No, that is not correct';
-    var greeting = 'Yes, that is correct';
-    if ($('#name').val() == 'dog')
-	alert(greeting);
-    else if ($('#name').val() == 'DOG')
-	alert(greeting);
-    else if ($('#name').val() == 'Dog')
-	alert(greeting);
-    else
-	alert(response);
+    var wrongAnimal = 'No, that should NOT be your favorite animal';
+    var notChecked = 'No, you did not check the box';
+    if (($('#name').val() != 'dog') && ($('#name').val() != 'Dog') && ($('#name').val() != 'DOG'))
+    {
+	alert(wrongAnimal);
+	return false;
+    }
+    if (!check.checked)
+    {
+	alert(notChecked);
+	return false;
+    }
 }
 
+function domMan()
+{
+document.getElementById('field').innerHTML = 'No';
+}
+function validateForm()
+{
+    var x=document.forms["form1"]["name"].value;
+    var y=document.forms["form1"]["check"].checked;
+    var z=document.forms["form1"]["prefer"];
+    var a=z[1].checked;
+
+
+    if (x==null || x=="")
+    {
+	alert("Surely you have a favorite animal");
+	return false;
+    }
+    if(y == false)
+    {
+	alert("You should have checked that");
+	return false;
+    }
+    if(!a)
+    {
+      alert("No, you must not pick that preference");
+      return false;
+    }
+}
 
 
