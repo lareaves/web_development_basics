@@ -7,12 +7,25 @@
 </head>
 <body>
   <div id="content">
-    var userFirstName, userLastName, finished;
+    <div class = '#hidden_div'>
+      var userFirstName='', userLastName='', finished;
+    </div>
     <form action="http://symlink.dk/code/php/submit" method="POST">
       First name: <input type="text" userFirstName="fname"><br>
       Last name: <input type="text" userLastName="lname"><br>
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" onClick='validateName()'>
     </form>
+    funtion validateName() {
+      var flag;
+      if (userFirstName = ''){
+        alert('You must provide a first name.')
+        flag = false;
+        }
+      if (userLastName = ''){
+        alert('You must provide a last name.')
+        flag = false;
+        }
+    }
   </div>
 </body>
 </html>
