@@ -1,11 +1,63 @@
+
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="jquery-min.js"></script>
+<script type="text/javascript">
+
+function checkBlankForm()
+{
+var x=document.getElementById('firstName').value;
+if (x==null || x=="")
+  {
+  alert('First name must be filled out');
+  return false;
+  }
+var y=document.getElementById('gender').value;
+if (y==null || y=="")
+  {
+  alert('You must pick a gender');
+  return false;
+  }
+var z=document.getElementById('emailInput').value;
+if (z==null || z=="")
+  {
+  alert('You must provide an email');
+  return false;
+  }
+var a=document.getElementById('monthInput').value;
+if (a<1 || a>12)
+  {
+  alert('There are only 12 months! Enter a month between 1 and 12.');
+  return false;
+  }
+ 
+
+}
+</script>
 </head>
 <body>
   <div id="content">
+    <h1>Philip Fanelli A2</h1>
+    <div class="subsection">
+      <form method="POST" action="http://symlink.dk/code/php/submit"  onsubmit="return checkBlankForm()">
+        
+        <label>First Name: <input type="text" id="firstName" name="firstName"></label><br>
+        Gender: <br>
+        <label>Male<input type="radio" id="gender" name="gender"> </label> <br>
+        <label>Female<input type="radio" id="gender" name="gender"> </label>  <br>
+        <label>Email address: <input type="email" id="emailInput" name="emailInput"></label><br>
+        <label>Enter a month in digit form: <input type="number" id="monthInput" name="monthInput"></label><br>
+        <input type="submit" value="Submit!"><br>
+	
+      </form>
+      <button type="button" onclick="$('#hidden_div').show();">Run show()</button> <br>
+    </div>
+    <div id="hidden_div">
+      <br>
+      This text just came out of thin air!
+    </div>
   </div>
 </body>
 </html>
