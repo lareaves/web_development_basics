@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="jsutton9-box.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="jsutton9-validation.js"></script>
+  <script type="text/javascript" src="jsutton9-bounce.js"></script>
 </head>
 <body>
   <div id="content">
+    <form name="myForm" action="http://symlink.dk/code/php/submit/" method="post" onsubmit="return validateForm()">
+      Text: <input type="text" name="text"></input>
+      <br></br>
+      <br></br>
+
+      <div class="left">
+        Radio:&nbsp&nbsp
+      </div>
+      <div class="left">
+        none <input type="radio" value="" name="radio" checked></input>
+        <br></br>
+        one <input type="radio" value=1 name="radio"></input>
+        <br></br>
+        two <input type="radio" value=2 name="radio"></input>
+      </div>
+      <div class="clear"></div>
+      <br></br>
+      <br></br>
+
+      Select: <select name="select">
+        <option selected="selected" value="">
+          Select
+        </option>
+        <option value="foo">
+	  Foo
+	</option>
+        <option value="bar">
+	  Bar
+	</option>
+        <option value="baz">
+	  Baz
+	</option>
+      </select>
+      <br></br>
+      <br></br>
+
+      Range: <input type="range" name="range" value="10" 
+              step="1" max="20" min="0"></input>
+      <br></br>
+      <br></br>
+
+      <input type="button" value="animate" onclick="animate()"></input>
+      <br></br>
+      <br></br>
+
+      <div id="myBox">
+        bounce
+      </div>
+
+      <input type="submit"></input>
+    </form>
   </div>
 </body>
 </html>
