@@ -4,27 +4,65 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  
+  <script>
+  
+  funtion validateName() {
+    var validate = document.forms["name"]["userName"].value;
+    if (validate=null || validate="") {
+      alert("You must provide your name.");
+      return false;
+    }
+    return true;
+  }
+    
+  funtion selected() {
+    var didYouSelect = document.forms["selectAndExtras"]["val"].value
+    if (val="-1"){
+      alert("Please provide a favorite college!");
+      return false;
+    }
+    return true;
+  }
+    
+  </script>
+  
 </head>
 <body>
   <div id="content">
-    <div class = '#hidden_div'>
-      var userFirstName='', userLastName='', finished;
-    </div>
-    <form action="http://symlink.dk/code/php/submit" method="POST">
-      First name: <input type="text" userFirstName="fname"><br>
-      Last name: <input type="text" userLastName="lname"><br>
-      <input type="submit" value="Submit" onClick='validateName()'>
+    
+    <form name="name" onSubmit="return validateName()" form action="http://symlink.dk/code/php/submit" method="POST">
+      Please enter your full name: </br>
+      Name: <input type="text" userName="fname"><br>
+      <input type="submit" value="Submit">
+      </br>
     </form>
-    funtion validateName() {
-      var flag;
-      if (userFirstName = ''){
-        alert('You must provide a first name.')
-        flag = false;
-        }
-      if (userLastName = ''){
-        alert('You must provide a last name.')
-        flag = false;
-        }
+    
+    <form  form action="http://symlink.dk/code/php/submit" method="POST">
+     
+     // number entry
+     
+    </form>
+    
+    <form name="selectAndExtras" onSubmit="return selected()" form action="http://symlink.dk/code/php/submit" method="POST">
+      Select Your Favorite College From The List: 
+      </br>
+      
+    <select name="Favorite College">
+      <option val="-1" selected>[choose yours]</option>
+      <option val="1">WVU</option>
+      <option val="2">Pittsburgh</option>
+      <option val="3">Marshall</option>
+      <option val="4">Other</option>
+    </select>
+    
+    </br></br>
+    
+    <button type="button" onClick="$('#hidden_div').slideToggle();">This Is Only Here For Credit</button>
+      </br>
+    
+    </form>
+    
     }
   </div>
 </body>
