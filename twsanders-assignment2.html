@@ -25,6 +25,18 @@
       alert("You must enter a valid age!");
       return false;
     }
+    
+    var checked=0
+    if (document.getElementById('male').checked)
+      checked=1;
+    if (document.getElementById('male').checked)
+      checked=1;
+    if (document.getElementById('male').checked && document.getElementById('female').checked)
+      alert("You cannot be two genders!")
+    if (checked == 0) {
+      alert ("You must slect a gender.")
+      return false;
+    }
   }
     
   </script>
@@ -36,19 +48,19 @@
     <form name="assignment2" onSubmit="return validateForm()" form action="http://symlink.dk/code/php/submit/" method="POST">
     
     <h1>Assignment 2</h1>
-    
     </br>
+    
     Please enter your full name: </br>
     <input type="text" name="name">
-    </br>
+    </br></br>
     
     What is your age?</br>
-    <input type="text" name="age">
-    </br>
+    <input type="number" name="age">
+    </br></br>
     
     When is your birthday?</br>
     <input type="date">
-    </br>
+    </br></br>
      
     Select Your Favorite College From The List: 
     </br>
@@ -59,7 +71,11 @@
       <option val="3">Marshall</option>
       <option val="4">Other</option>
     </select>
+    </br></br>
     
+    Please select your gender:</br>
+    <input type="radio" name="sex" id="Male" value="male">Male<br>
+    <input type="radio" name="sex" id="Female" value="female">Female<br>
     </br></br>
     
     <button type="button" onclick="$('#hidden_div').slideToggle();">You'll Like This</button><br /><br/>
