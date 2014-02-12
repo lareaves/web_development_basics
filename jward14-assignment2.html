@@ -5,6 +5,7 @@
   <script type="text/javascript" src="script.js"></script>
   <style>
     h1{ 
+    text-align: center;
     border: #999 1px dashed;
     font-family: Arial;
     font-size: 20px;
@@ -15,19 +16,46 @@
     background: #6F8A00;
     color: white;
     }
+
     </style>
+<script type="text/javascript">
+function valform(){
+var valid = true;
+if($("input[id=input1]:checked").val() == "A"){
+valid = false;
+}
+if($("input[name=var2]:checked").val()=="B"){
+valid = false;
+}
+if($("#input4").val()==""){
+valid = false;
+}
+if($("#input5").val()==""){
+valid = false;
+}
+if(!valid){
+$("#errormessage").hide();
+$("#errormessage").html("Please try again");
+$("#errormessage").fadeIn();
+}
+return valid;
+} 
+</script>
 </head>
 <body>
-<h1>Lab 1</h1>
+<h1>Joshua Ward</h1>
   <div id="content">
-    <form action="http://symlink.dk/code/php/submit" method="post">
+    <form action="http://symlink.dk/code/php/submit" method="post" onsubmit="return valform()">
+<p id="p1">Assignment 2</p>
       <p>
-	<input type="checkbox" name="var1" value="A"><br>
-	<input type="radio" name="var2" value="">
-	<input type="radio" name="var2" value=""><br>
-	<input type="text" name="var3" value="Enter text here"><br>
-	<input type="button" name="var4" value="Button"><br>
+	<input type="checkbox" name="var1" value="A" id="input1">If this is checked the form will NOT submit<br>
+	<input type="radio" name="var2" value="A" id="input2">
+	<input type="radio" name="var2" value="B" id="input3">If this is checked the form will NOT submit<br>
+	<input type="text" name="var3" value="Enter text here" id="input4"><br>
+	<input type="submit" name="var4" value="Button" id="input5"><br>
 	</p>
+<div id="errormessage">
+</div>
       </form>
   </div>
 </body>
