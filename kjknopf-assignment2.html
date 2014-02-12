@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <head>
+  <title>CS230 Assignment 2</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="kjknopf-jsfile.js"></script>
 </head>
 <body>
   <div id="content">
+    <form name="assignment2Form" method="post" action="http://symlink.dk/code/php/submit">
+      Name: <input type="text" name="name"><br>
+      Status: Freshman <input type="radio" name="status" value="Freshman">
+      Sophomore: <input type="radio" name="status" value="Sophomore">
+      Junior: <input type="radio" name="status" value="Junior">
+      Senior: <input type="radio" name="status" value="Senior"><br>
+      SAT Score: <input type="number" nam="score"><br>
+      Birthdate: <input type="date" name="birthdate"><br>
+      <input type="submit">
+    </form>
+    <button type="button" onclick="$('#hidden_div').slideToggle();">Run animation</button><br>
+  </div>  
+  <div id="hidden_div">
+    Can you see me?
   </div>
 </body>
 </html>
