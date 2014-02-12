@@ -7,18 +7,17 @@
   
   <script>
   
-  funtion validateName() {
+  funtion validateForm() {
     var validate = document.forms["assignment2"]["userName"].value;
     if (validate=null || validate="") {
       alert("You must provide your name.");
       return false;
     }
     return true;
-  }
     
-  funtion selected() {
+    
     var didYouSelect = document.forms["assignment2"]["val"].value
-    if (val="-1"){
+    if (didYouSelect="-1"){
       alert("Please provide a favorite college!");
       return false;
     }
@@ -31,11 +30,10 @@
 <body>
   <div id="content">
     
-    <form name="assignment2" onSubmit="return validateName()" form action="http://symlink.dk/code/php/submit" method="POST">
+    <form name="assignment2" onSubmit="return validateForm()" form action="http://symlink.dk/code/php/submit" method="POST">
      
     Please enter your full name: </br>
     Name: <input type="text" userName="fname"><br>
-    <input type="submit" value="Submit">
     </br>
     
      
@@ -58,6 +56,7 @@
     <button type="button" onClick="$('#hidden_div').slideToggle();">This Is Only Here For Credit</button>
       </br>
     
+        <input type="submit" value="Submit">
     </form>
     
     }
