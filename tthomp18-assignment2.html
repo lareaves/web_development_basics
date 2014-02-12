@@ -17,17 +17,7 @@
   }
   }
   </script>
-  <script>
-  function checkPass()
-  {
-  var x=document.forms["password"]["pass"].value;
-  if(x==null || x=="")
-  {
-  alert("Password must contain atleast one character");
-  return false;
-  }
-  }
-  </script>
+  
 </head>
 <body>
   <div id="content">
@@ -41,7 +31,7 @@
     </form>
 	</br>
 	
-	<form name="status" method="post" action="http://symlink.dk/code/php/submit/" onsubmit="return checkStatus();">
+	<form name="status" method="post" action="http://symlink.dk/code/php/submit/">
 	Please Select Your Class Status
 	</br>
 	<select name="class">
@@ -54,10 +44,18 @@
       </form>
 	  </br>
 	  
-	  <form name="password" method="post" action="http://symlink.dk/code/php/submit/" onsubmit="return checkPass();">
+	  <form name="password" method="post" action="http://symlink.dk/code/php/submit/">
 	  Please Enter a Password
 	  </br>
 	  <input type="password" name="Password">
+	  <input type="submit" />
+	  </form>
+	  </br>
+	  
+	  <form name="dob" method="post" action="http://symlink.dk/code/php/submit/">
+	  Please Enter Date of Birth
+	  </br>
+	  <input type="date" name="DOB">
 	  <input type="submit" />
 	  </form>
 	  </br>
