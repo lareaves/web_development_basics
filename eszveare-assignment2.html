@@ -3,9 +3,79 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <title>Eaton's Page</title>
+  
+  <script type="text/javascript">
+	function ShowAlert(Text)
+	{
+		alert("Here is a message!");
+	}
+	function ValidateForm()
+	{
+		var a = document.forms["MyForm"]["FN"].value;
+		if (a == null || a == "")
+		{
+			alert("Name must be filled out.");
+			return false;
+		}
+		
+		var b = document.forms["MyForm"]["Cell"].value;
+		if (b == null || b == "")
+		{
+			alert("Phone must be filled out.");
+			return false;
+		}
+		
+		var c = document.forms["MyForm"]["SpamCheck"].value;
+		if (c != "four")
+		{
+			alert("Incorrect answer to 2 + 2!");
+			return false;
+		}
+		
+		var d = document.forms["MyForm"]["Age"].value;
+		if (d == null || d == "")
+		{
+			alert("Age must be filled out.");
+			return false;
+		}
+		
+		return true;
+	}
+  </script>
+
+  
 </head>
 <body>
   <div id="content">
+  
+  <form id="MyForm" method="POST" onsubmit="return ValidateForm()" action="http://symlink.dk/code/php/submit/">
+	Name: <input type="text" id ="s" name="FN"></input>
+	</br>
+	
+	Phone number: <input type="tel" name="Cell">
+	</br>
+	
+	What is 2 + 2?
+	<select name = "SpamCheck">
+		<option value="five">5</option>
+		<option value="four">4</option>
+    </select>
+	
+	</br>
+	Age: <input type="number" name="Age" min="1" max="99">
+	</br>
+	
+	<input type="submit"></input>
+  </form>
+	
+	</br>
+	<button type="button" onclick="ShowAlert()">Show a Message</button>
+	</br>
+	
+	<div id="HideText">This is some annoying text that shouldn't be here!</div>
+	<button type="button" onclick="$('#HideText').fadeOut();">Hide Annoying Text</button>
+	<button type="button" onclick="$('#HideText').fadeIn();">Show Annoying Text</button>
   </div>
 </body>
 </html>
