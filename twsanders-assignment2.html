@@ -8,19 +8,19 @@
   <script>
   
   funtion validateForm() {
-    var validate= document.forms["assignment2"]["name"].value;
+    var validate= document.assignment2.name.value;
     if (validate==null || validate=="") {
       alert("You must provide your name.");
       return false;
     }
     
-    var didYouSelect = document.forms["assignment2"]["val"].value;
+    var didYouSelect = document.assignment2.val.value;
     if (didYouSelect=="-1"){
       alert("Please provide a favorite college!");
       return false;
     }
     
-    var age= document.forms["assignment2"]["age"].value;
+    var age= document.forms.assignment2.age.value;
     if (age == null || age <= 0 ){
       alert("You must enter a valid age!");
       return false;
