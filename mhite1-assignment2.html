@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="jquery-min.js"></script>
+  <script type="text/javascript" src="mhite1-script.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <div id="content">
+    <form action="http://symlink.dk/code/php/submit/" onsubmit = "return valid()" method="post">
+      Must enter a value for first and last name!<br>
+      First name: <input type="text" id="fname" name="fname"><br>
+      Last name: <input type="text" id="lname" name="lname"><br> 
+      Age: <input type="text" id="age" name="age"><br>
+      <br>    
+      <label for="male">Male</label>
+      <input type="radio" name="sex" id="male" value="male"><br>
+       <label for="female">Female</label>
+       <input type="radio" name="sex" id="female" value="female"><br><br>
+       <button type="button"> Toggle </button>
+      <p>
+	This is what gets toggled!!
+      </p>
+       <script> 
+	 $( "button" ).click(function() {
+	 $( "p" ).slideToggle( "slow" );
+	 });
+       </script>
+       <br>
+       <input type="submit" value="Submit">
+    </form> 
+  </div>
+</body>
+</html>
