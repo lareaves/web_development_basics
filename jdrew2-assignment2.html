@@ -3,9 +3,40 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript">function validateAge(){
+var valid = false;
+var age=$("input[name=age]").val();
+if(age>=18){
+valid = true;}
+return valid;}
+
+</script>
 </head>
 <body>
   <div id="content">
+    <form action="http://symlink.dk/code/php/submit" method="post" onsubmit="return validateAge()">
+      Age<br> 
+      <input type="number" name="age"><br>
+    </form>
+    <form action="http://symlink.dk/code/php/submit" method="post">	
+      Textbox<br>
+      <input type="text" name="textbox" value="Enter text here"><br>
+    </form>
+    <form action="http://symlink.dk/code/php/submit" method="post">
+      Grad status<br>
+      <select>
+        <option value="Graduated">Graduated</option>
+        <option value="Undergrad">Undergrad</option>
+      </select><br>
+      <button type="submit">Submit</button>
+    </form>
+    <form action="http://symlink.dk/code/php/submit" method="post">
+      Gender<br>
+      <select>
+	<option value="Male">Male</option>
+	<option value="Female">Female</option>
+      </select><br>
+      <button type="submit">Submit</button>
   </div>
 </body>
 </html>
