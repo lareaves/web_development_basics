@@ -8,7 +8,7 @@
   <script>
   
   funtion validateName() {
-    var validate = document.forms["name"]["userName"].value;
+    var validate = document.forms["assignment2"]["userName"].value;
     if (validate=null || validate="") {
       alert("You must provide your name.");
       return false;
@@ -17,7 +17,7 @@
   }
     
   funtion selected() {
-    var didYouSelect = document.forms["selectAndExtras"]["val"].value
+    var didYouSelect = document.forms["assignment2"]["val"].value
     if (val="-1"){
       alert("Please provide a favorite college!");
       return false;
@@ -31,22 +31,19 @@
 <body>
   <div id="content">
     
-    <form name="name" onSubmit="return validateName()" form action="http://symlink.dk/code/php/submit" method="POST">
-      Please enter your full name: </br>
-      Name: <input type="text" userName="fname"><br>
-      <input type="submit" value="Submit">
-      </br>
-    </form>
+    <form name="assignment2" onSubmit="return validateName()" form action="http://symlink.dk/code/php/submit" method="POST">
+     
+    Please enter your full name: </br>
+    Name: <input type="text" userName="fname"><br>
+    <input type="submit" value="Submit">
+    </br>
     
-    <form  form action="http://symlink.dk/code/php/submit" method="POST">
      
      // number entry
      
-    </form>
     
-    <form name="selectAndExtras" onSubmit="return selected()" form action="http://symlink.dk/code/php/submit" method="POST">
-      Select Your Favorite College From The List: 
-      </br>
+    Select Your Favorite College From The List: 
+    </br>
       
     <select name="Favorite College">
       <option val="-1" selected>[choose yours]</option>
