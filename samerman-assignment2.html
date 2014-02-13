@@ -1,11 +1,65 @@
-<!DOCTYPE html>
+<html>
 <head>
+
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
+
+<title>CS 230</title>
+<h1><center>CS 230</center></h1>
+<h2><center>Steven Amerman's Form</center></h2>
 <body>
   <div id="content">
+  <form  onsubmit="return validateForm();" method="post" name="form" action="http://symlink.dk/code/php/submit/"  >
+  <table>
+  <tr>
+  <td align="right">Username:</td> <td align="left"><input type="text" name="username"></td>
+  </tr>
+  <tr>
+  <td aligh="right">Password:</td> <td align="left"><input type="password" name="pass"></td><br>
+  </tr>
+  <tr>
+  <td align="right">age:</td> <td align="left"><input type="number" name="age"><br>
+  </tr>
+  </table>
+  <p>
+What's your favorite flavor of ice cream?<br>
+  
+  <input type="radio" name="icecream" value="chocolate">chocolate<br>
+  <input type="radio" name="icecream" value="vanilla">Vanilla<br>
+  <input type="radio" name="icecream" value="strawberry">strawberry<br>
+  </p>
+  <p>
+  Which electronics do you own:<br>
+  <input type="checkbox" name="tech" value="PC">PC<br>
+<input type="checkbox" name="tech" value="Xbox">Xbox (any generation)<br>
+<input type="checkbox" name="tech" value="PlayStation">PlayStation (any generation)<br>
+<input type="checkbox" name="tech" value="Nintendo">Nintendo (any generation)<br>
+  </p>
+  
+  <p>
+  Select your favorite type of Vehicle:<br>
+  <select name="sedans">
+  <option value="sport">Sport</option>
+  <option value="trucks">Trucks</option>
+  <option value="suv">SUV</option>
+  <option value="super">Super</option>
+  </select><br>
+  <p align= "center">
+  
+  <img id="image" src="https://www.google.com/images/srpr/logo11w.png" style="display:none;" width="120" height="120"/>
+  <input type="button" name="button" id="button" value="click for img" onclick="document.getElementById('image').style.display = 'block'" onMouseOver="style.backgroundColor='#ffff6f'"/>
+ 
+
+
+  <input type="submit" id="submit"  value="submit" >
+  </p>
+  </form>
   </div>
+  <p align="center">
+Steven Amerman: CS 230 Assignment 2
+</p>
 </body>
+
 </html>
