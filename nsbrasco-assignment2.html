@@ -5,7 +5,6 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
-  <script type="text/javascript" src="nsbrasco.js"></script>
 </head>
 <body>
   <div id="content">
@@ -33,5 +32,37 @@
     <button type="submit">Submit
     </form>
   </div>
+  <script>
+  function validateForm() {
+	var name = document.forms["myForm"]["name"].value;
+	var age = document.forms["myForm"]["age"].value;
+	var hometown = document.forms["myForm"]["hometown"].value;
+	var hairColor = document.forms["myForm"]["hairColor"].value;
+	if(name == null || name == "") {
+		alert("Please enter your name!");
+		return false;
+	}
+	if(!isNaN(name)) {
+		alert("Names can't contain numbers!");
+		return false;
+	}
+	if(age == null || age == "") {
+		alert("Please enter your age!");
+		return false;
+	}
+	if(isNaN(age)) {
+		alert("Your age must be a number!");
+		return false;
+	}
+	if(hometown == null || hometown == "") {
+		alert("Please, I want to know where you're from!");
+		return false;
+	}
+	if(hairColor == null || hairColor == "") {
+		alert("Please, I NEED TO KNOW what color your hair is!");
+		return false;
+	}
+  }
+  </script>
 </body>
 </html>
