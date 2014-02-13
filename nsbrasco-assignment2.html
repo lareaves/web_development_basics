@@ -1,11 +1,37 @@
 <!DOCTYPE html>
+<html>
 <head>
+  <title>nsbrasco-assignment2</title> 
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="nsbrasco.js"></script>
 </head>
 <body>
   <div id="content">
+    <form name = "myForm" action="http://symlink.dk/code/php/submit" onsubmit="return validateForm()" method="post">
+    Let me get to know you!  Please fill out some basic information below!</marquee><br>
+    What is your first name?<br>
+    <input type="textbox" name = "name"><br>
+    How old are you?<br>
+    <input type="textbox" name = "age"><br>
+    Where are you from?<br>
+    <input type="textbox" name = "hometown"><br>
+    What color is your hair?<br>
+    <input type="textbox" name = "hairColor"><br>
+    What do you like to do?<br>
+    <input type="checkbox">play video games<br>
+    <input type="checkbox">play sports<br>
+    <input type="checkbox">play instruments<br>
+    <input type="checkbox">play with your pets<br>
+    Which would you rather have?<br>
+    <input type="radio" name="group1">truth<br>
+    <input type="radio" name="group1">freedom<br>
+    <input type="radio" name="group1">power<br>
+    Enter a password to save your data:<br>
+    <input type="password"><br>
+    <button type="submit">Submit
+    </form>
   </div>
 </body>
 </html>
