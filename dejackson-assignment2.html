@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-</head>
+<html>
 <body>
-  <div id="content">
-  </div>
+
+<form name = "myform" action="http://symlink.dk/code/php/submit" method = "post">
+Enter your name.
+<br>
+<input type="text" name="name">
+<p>
+Enter your age.
+<br>
+<input type = "number" name = "age">
+<p>
+Enter your gender.
+<br>
+Male <input type = "radio" name = "gender" value = "male">
+<br>
+Female <input type = "radio" name = "gender" value = "female">
+<p>
+<button type="button">Surprise!</button>
+<p>
+Sorry...nothing much here.
+<p>
+<script> $( "button" ).click(function() 
+{$( "p" ).slideToggle( "slow" );});
+</script>
+<p>
+<input type="submit" value="Submit">
+</form>
+
 </body>
 </html>
