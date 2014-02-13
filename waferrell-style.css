@@ -1,0 +1,83 @@
+body {
+    background-color: lightskyblue;
+}
+
+div#content {
+    background-color: cornsilk;
+    color: saddlebrown;
+    padding: 25px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border-radius: 25px;
+}
+
+div.center_image {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+div#content a:visited {
+    color: saddlebrown;
+}
+
+div#content a {
+    color: saddlebrown;
+}
+
+div.note {
+    background-color: yellow;
+    color: black;
+    width: 25%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: auto;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    text-align: center;
+    float: right;
+}
+
+div.subsection {
+    margin-left: 10px;
+    text-align: justify;
+}
+
+span.dynamic:hover {
+    color: cornsilk;
+    background-color: saddlebrown;
+}
+
+div.code {
+    font-family: monospace;
+    background-color: black;
+    color: #00FF00;
+    width: 50%;
+    padding: 10px;
+    margin: 20px;
+    text-align: left
+}
+
+form#ruby_input input {
+    background-color: lightskyblue;
+}
+
+div#hidden_div {
+    display: none;
+    background-color: lightskyblue;
+}
+
+ul {
+    list-style: none;
+}
+
+div.left {
+    float: left;
+}
+
+div.clear {
+    clear: both;
+}
