@@ -2,10 +2,95 @@
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
   <script type="text/javascript" src="script.js"></script>
+  
+  <script>
+function validateForm()
+{
+var n=document.forms["myForm"]["name"].value;
+var age=document.forms["myForm"]["age"].value;
+var p=document.forms["myForm"]["phone"].value;
+if (n==null || n=="")
+  {
+  alert("Name must be filled out");
+  return false;
+
+  }
+if(!isNumber(age))
+{
+  alert("Age must be a number");
+  return false;
+}
+if(!phone(p))
+{
+alert("Phone must be filled out");
+return false;
+}
+}
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+function phone(p) {
+if (p==null || p=="")
+ return false;
+ 
+ return true;
+}
+</script>
+
 </head>
+
 <body>
-  <div id="content">
-  </div>
+
+<button onclick="$('#hidden_div').slideToggle();" type="button" >
+    Show/Hide
+</button>
+
+<div id="hidden_div" style="display: block;">
+Survey
+
+
+<form name="myForm" action="http://symlink.dk/code/php/submit/"  onsubmit="return validateForm()" method="post">
+
+
+<li>Name:</li>
+<input type="text" id="name" name="name"></input>
+<li></li>
+
+<li>Phone:</li>
+<input type="text" id="phone" name="phone"></input>
+<li></li>
+
+<li>Age:</li>
+<input type="text" id="age" name="age"></input>
+<li></li>
+
+<li>Select one: </li>
+
+<li>Male</li><input type="radio" id="male" value="1" name="radio_demo"></input>
+
+<li>Female</li><input type="radio" id="female" value="2" name="radio_demo"></input>
+<li></li>
+
+<li>Major:</li>
+
+<li><input type="checkbox" id="ee" name="check_box_EE" ></input>Electrical Engineering</li>
+
+<li><input type="checkbox" id="cpe" name="check_box_CpE" ></input>Computer Engineering</li>
+
+<li><input type="checkbox" id="cs" name="check_box"_CS ></input>Computer Science</li>
+
+<li><input type="checkbox" id="bio" name="check_box_Bio" ></input>Biometrics</li>
+<li></li>
+
+
+<li>Click to Submit</li>
+<input type="submit" value ="Submit"></input>
+
+
+
+</form>
+</div>
 </body>
 </html>
