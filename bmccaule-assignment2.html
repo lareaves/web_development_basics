@@ -65,12 +65,13 @@ $(document).ready(function(){
   
 
 <div class="subsection">
-<form method="post" action="http://symlink.dk/code/php/submit" onsubmit="return validateForm()" name="LabForm">
+<form method="POST" action="http://symlink.dk/code/php/submit/" onsubmit="return validateForm()" name="LabForm">
 First name: <input type="text" name="fname"><br>
 Password: <input type="password" name="pass"><br>
 Days in January(between 1 and 31): <input type="number" name="days" min="1" max="31"><br>
 Date: <input type="date" name="date"><br>
 <input type="submit" value="Submit"><br><br>
+</form>
 </div>
 
 
@@ -80,7 +81,7 @@ Date: <input type="date" name="date"><br>
 
 
 
-</form>
+
 
 
 </div>
