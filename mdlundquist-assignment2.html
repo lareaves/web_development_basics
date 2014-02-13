@@ -3,6 +3,28 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+ <script type="text/javascript">
+function vaildateIn() {
+var fname = $("input[name=firstName]").val();
+var valid = true;
+
+if (fname == "") {
+valid = false;
+}
+
+return valid;
+}
+var cDate = $("input[name = currentDate]").val();
+var valid = true;
+if(cDate == ""){
+valid = false;
+}
+return valid
+{
+
+
+
+</script>
 </head>
 <body>
   <div id="content">
