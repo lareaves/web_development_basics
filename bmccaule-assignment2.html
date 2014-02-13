@@ -1,11 +1,91 @@
 <!DOCTYPE html>
+
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+ 
+
+<script type="text/javascript" src="jquery-min.js">
+</script>
+  
+
+<script type="text/javascript" src="script.js">
+</script>
+
+
+<script>
+function validateForm()
+{
+var name=document.forms["LabForm"]["fname"].value;
+var pass=document.forms["LabForm"]["pass"].value;
+var days=document.forms["LabForm"]["days"].value;
+var date=document.forms["LabForm"]["date"].value;
+if (name==null || name=="")
+  {
+  alert("First name must be filled out");
+  return false;
+  }
+
+if (pass==null || pass=="")
+  {
+  alert("Password must be filled out");
+  return false;
+  }
+
+if (days==null || days=="")
+  {
+  alert("Total days must be filled out");
+  return false;
+  }
+
+if (date==null || date=="")
+  {
+  alert("The Date must be filled out");
+  return false;
+  }
+}
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({right:'10px'});
+  });
+});
+
+</script>
+
+
 </head>
+
+
+
+
 <body>
-  <div id="content">
-  </div>
+  
+<div id="content">
+  
+
+<div class="subsection">
+<form method="post" action="http://symlink.dk/code/php/submit" onsubmit="return validateForm()" name="LabForm">
+First name: <input type="text" name="fname"><br>
+Password: <input type="password" name="pass"><br>
+Days in January(between 1 and 31): <input type="number" name="days" min="1" max="31"><br>
+Date: <input type="date" name="date"><br>
+<input type="submit" value="Submit"><br><br>
+</div>
+
+
+<button>Start Animation</button>
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;">
+</div>
+
+
+
+</form>
+
+
+</div>
+
 </body>
+
 </html>
+
