@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="jmrobinson-style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-  <div id="content">
-  </div>
-</body>
-</html>
+  <script type="text/javascript" src="jmrobinson-script.js"></script>
+</head>	
+	<body onload="start()">
+
+	Welcome to the food ordering service!<br><br>
+	<form action="http://symlink.dk/code/php/submit"> 
+
+
+	What is your name?: <input type="text" name="name" 	id="name" 	value=""><br><br>
+
+	What is your favorite pizza topping?<br>
+	<input type="radio" name="pizza" id="pepperoni" 	value="pepperoni"> Pepperoni<br>
+	<input type="radio" name="pizza" id="cheese" 		value="cheese"> Cheese<br>
+	<input type="radio" name-"pizza" id="sausage" 	value="sausage"> Sausage<br>
+	<input type="radio" name="pizza" id="other" value="other">	Other<br><br>
+
+	What is 1 plus 2? :<input type="number" name="addition" 	id="addition" min="1" max="4"><br><br>
+	
+	Please choose your favorite type of chocolate: 
+	<select name="Chocolate">
+		<option value="Milk">Milk</option>
+		<option value="Dark">Dark</option>
+		<option value="White">White</option>
+	</select><br><br>
+
+	Check this box to unlock the submit button for the food.
+	<input type="checkbox" id="chkbox" value = "1" 	onclick="javascript:unlock(chkbox)">
+	<input type="submit" value="submit" id="submit">
+	</form>
+
+	<br><br>
+
+	<button type="button" 	onclick="$('#hidden_div').slideToggle();"> Click this 	button to see a sample of what we offer	</button>
+
+	<div id="hidden_div" style="notdisplay:block;">
+	<div class ="center image">
+	<img src="http://i.imgur.com/j2b8lbb.jpg" alt="This is one 	of our amazing products">
+	</div></div></body>
+
