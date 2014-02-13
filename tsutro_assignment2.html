@@ -1,0 +1,97 @@
+CTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="jquery-min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+     <div id="content">
+		<form action="http://symlink.dk/code/php/submit" method="POST">
+	 
+	  
+				First Name:<input type="text" name="fname"><br>
+				<input type="Submit" value="Submit"><br>
+		
+				<br>
+		
+				Please select your class status.<br>
+				<select>
+					<option value="Freshman">Freshman</option>
+					<option value="Sophomore">Sophomore</option>
+					<option value="Junior">Junior</option>
+					<option value="Senior">Senior</option>
+				</select><br>
+		
+				<br>
+		
+				Are you Male or Female?<br>
+				<label for="male">Male</label>
+				<input type="radio" name="sex" id="male" value="male"><br>
+				<label for="female">Female</label>
+				<input type="radio" name="sex" id="female" value="female"><br>
+				
+		
+				<br>
+		
+				<h3>The title of this document is:</h3>
+				<p id="file"></p>
+				<button type="button" onclick="fileName()">Find File</button>
+		
+				<br>
+                        ________________________________________________________________________________
+                                <br><br>
+		
+				<h2>Do you want to know the date?</h2>
+				<p>Click the button to display the date.</p>
+				<p id="date"></p>
+		
+				<button type="button" onclick="getDate()">Date</button>
+		
+				<br>
+				
+				<p id="Goodbye">
+					Click on this button if you are finished
+				</p>
+				<button type="button" onclick="sayGoodbye()">Click Me!</button>
+				
+				<br>
+			_______________________________________________________________________________	
+                                <br><br>
+
+			</form> 
+
+		<img src="http://25.media.tumblr.com/03464a4b59893592428d6bca53a3455e/tumblr_n0a495Dd6V1t8iy1po1_500.gif" alt="Animation showing how happy I was when I finished">
+
+	</div>
+		<script>
+			function sayGoodbye()
+			{
+			document.getElementById("Goodbye").innerHTML="Goodbye";
+			}
+		
+			function getDate()
+			{
+			document.getElementById("date").innerHTML = Date();
+			}
+			
+			function fileName()
+			{
+			document.write(document.title);
+			}
+			
+				
+		</script>
+</body>
+</html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="jquery-min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <div id="content">
+  </div>
+</body>
+</html>
