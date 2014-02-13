@@ -1,3 +1,25 @@
+function validate(name, age, gender){
+if (name == "" || name == null){
+alert("Please enter a valid name.");
+return false;
+}
+else if (age < 0){
+alert("Invalid age.");
+return false;
+}
+else if (age > 110){
+alert("I don't think you're that old.");
+return false;
+}
+else if (gender == "" || gender == null){
+alert("Please indicate gender.");
+return false;
+}
+else{
+return true;
+}
+
+
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="style.css" />
@@ -25,7 +47,7 @@ Female <input type = "radio" name = "gender" value = "female">
 <p>
 Sorry...nothing much here.
 <p>
-<script> $( "button" ).click(function() 
+<script> $( "button" ).click(function()
 {$( "p" ).slideToggle( "slow" );});
 </script>
 <p>
@@ -33,4 +55,3 @@ Sorry...nothing much here.
 </form>
 </div>
 </body>
-</html>
