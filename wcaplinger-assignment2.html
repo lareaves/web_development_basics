@@ -4,8 +4,78 @@
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
+
+<script>
+function checkRadio(radios)
+{
+    for(i = 0; i < radios.length; ++ i) {
+        if(radios[i].checked) return true;
+    }
+    return false;
+}
+
+function checkAge() {
+	var x=document.forms["test"]["age"].value;
+	if (x==null || x=="" || x<18) {
+  		alert("Invalid Entry");
+  		return false;
+  	}
+  	return true;
+}
+
+function checkName() {
+	var x=document.forms["test"]["name"].value;
+	if (x==null || x =="") {
+  		alert("Invalid Entry");
+  		return false;
+  	}
+  	return true;
+}
+
+function validateForm()
+{
+    if(validateRadio(document.forms["test"]["gender"]) && checkAge() && checkName()) {
+        return true;
+    }
+    else {
+        alert('You dun goofed.');
+        return false;
+    }
+}
+</script>
+
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({
+      left:'250px',
+      height:'+=100px',
+      width:'+=100px'
+    });
+  });
+});
+</script> 
+
 <body>
   <div id="content">
+  	<form name="test" method="post" action="http://symlink.dk/code/php/submit/" onSubmit="return validateForm();">
+  		Name: <input type="text" name="name"><br>
+  		Gender: <input type="radio" name="gender" id="male" value="male">
+  				<label for="male">Male</label>
+  				<input type="radio" name="gender" id ="female" value="female">
+  				<label for="female">Female</label><br>
+  		Age: <input type="number" name="age"><br>
+  		School: <select>
+  					<option value="WVU">WVU</option>
+ 					<option value="Marshall">Marshall</option>
+  					<option value="AB">Alderson-Broaddus</option>
+  					<option value="Harv">Harvard</option>
+				</select><br>
+  		<input type="submit" value="Submit">
+  	</form>
   </div>
+  <button>PRESS FOR STUFF</button>
+  	<div style="background:#3160AF; height:150px; width:150px; position:absolute;">
+  	</div>
 </body>
 </html>
