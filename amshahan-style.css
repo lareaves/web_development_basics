@@ -21,7 +21,7 @@ height:2em;
 div#SignUpForm {
 background-color:#4080BF;
 border: 5px solid #204060;
-height: 250px;
+height: auto;
 display:none;
 padding:10px;
 }
@@ -40,4 +40,12 @@ margin-top:10px;
 
 div#SignUpForm li input,select {
 float:right;
+}
+
+div#ErrorContent {
+color:#BB0000;
+height:auto;
+background-color:#79A6D2;
+padding:5px;
+margin-bottom:5px;
 }
