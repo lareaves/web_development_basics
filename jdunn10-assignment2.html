@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="jdunn10-styles.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="jdunn10-script.js"></script>
 </head>
 <body>
   <div id="content">
+	<form name="infoForm" onsubmit="return validateInfoForm()" method="post" action="http://symlink.dk/code/php/submit/">
+	First Name:<input type="text" name="fname">*<br>
+	Last Name:<input type="text" name="lname">*<br>
+	<br>
+	Gender*<br>
+	<input type="radio" name="gender" value="male"> Male<br>
+	<input type="radio" name="gender" value="female"> Female<br>
+	<br>
+	Username:<input type="text" name="uname">*<br>
+	Password:<input type="password" name="pass">*<br>
+	<br>
+	Email:<input type="email" name="email"> (optional)<br>
+	<br>
+	<input type="submit" value="Submit">
+	<br>
+	* required
+	<br>
+	</form>
+	<input type="button" id="theButton" value="Click me!" onclick="thumbsUp()"><br>
+	<img height="300" width="300" src="http://static1.wikia.nocookie.net/__cb20090201113851/fallout/images/c/c3/Fallout3e.jpg" id="falloutBoy"/><br>
+	<input type="button" id="theButton2" value="Nuka Cola here!" onclick="nuka()">
   </div>
 </body>
 </html>
