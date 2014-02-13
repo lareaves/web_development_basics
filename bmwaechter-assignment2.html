@@ -7,6 +7,7 @@
 </head>
 <body>
   <div id="content">
+<<<<<<< HEAD
     <form name="myForm" action="http://symlink.dk/code/php/submit" method="get" onsubmit="return validate()">
       Name:<input type="text" name="name"><br><br>
       Email:<input type="email" name="email"><br><br>
@@ -21,5 +22,16 @@
 	<input type="button" onClick="changeDirection()" value="Change Direction(I guess this is my DOM modification?)"><br>
     Also a quick note... i set the method of my form to be 'get' rather than 'post' as you requested. This is because when it was set to post, the submission did not recognize any of the inputs submitted, i do not know why this is.
  </div>
+=======
+    <form name="myForm" action="http://symlink.dk/code/php/submit" method="post" onsubmit="validate()">
+      Name:<input type="text" name="name"><br>
+      Email:<input type="email" name="email"><br>
+      Password:<input type = "password" name = "pass"><br>
+      Confirm Passord:<input type = "password" name = "passConf"><br>
+      <input type="submit" value ="Submit" name="sub"> 
+       <input type="checkbox" name ="chkbx">I would like to recive more information via email<br>
+    </form>
+  </div>
+>>>>>>> 7c6b29a8165d6091b5811966d519746e5be898dc
 </body>
 </html>
