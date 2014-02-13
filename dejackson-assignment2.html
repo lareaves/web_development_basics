@@ -1,11 +1,57 @@
+function validate(name, age, gender){
+if (name == "" || name == null){
+alert("Please enter a valid name.");
+return false;
+}
+else if (age < 0){
+alert("Invalid age.");
+return false;
+}
+else if (age > 110){
+alert("I don't think you're that old.");
+return false;
+}
+else if (gender == "" || gender == null){
+alert("Please indicate gender.");
+return false;
+}
+else{
+return true;
+}
+
+
 <!DOCTYPE html>
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+<html>
+<link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-  <div id="content">
-  </div>
+<div id = "content">
+<form name = "myform" action="http://symlink.dk/code/php/submit" method = "post">
+Enter your name.
+<br>
+<input type="text" name="name">
+<p>
+Enter your age.
+<br>
+<input type = "number" name = "age">
+<p>
+Enter your gender.
+<br>
+Male <input type = "radio" name = "gender" value = "male">
+<br>
+Female <input type = "radio" name = "gender" value = "female">
+<p>
+<button type="button">Surprise!</button>
+<p>
+Sorry...nothing much here.
+<p>
+<script> $( "button" ).click(function()
+{$( "p" ).slideToggle( "slow" );});
+</script>
+<p>
+<input type="submit" value="Submit">
+</form>
+</div>
 </body>
-</html>
