@@ -1,11 +1,105 @@
 <!DOCTYPE html>
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+<html><head>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  
+<script>
+
+function validateForm()
+{
+var valid = true;
+var x=document.forms["first"]["fname"].value;
+if (x==null || x=="")
+  {
+  alert("Form not complete, you need a name");
+  valid = false;
+  }
+
+if (!validateEmail()) {
+ alert("Not a valid e-mail address");
+valid = false;
+}
+
+if(!checkPhone()){
+	alert("Not a valid phone number");
+	valid = false;
+}
+
+  return valid;
+}
+  </script>
+
+<script>
+function validateEmail()
+{
+var x=document.forms["first"]["email"].value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  return false;
+  }
+else {
+return true;
+}
+}
+</script>
+
+<script>
+
+function revealPhone()
+{
+$("#phone").slideDown();
+}
+
+</script>
+<script>
+function checkPhone()
+{
+if (document.forms["first"]["phone"].checked) {
+ var x = document.forms["first"]["phonenumber"].value;
+if(x.length<10||x.length>11){
+
+	return false;
+}
+}
+return true;
+}
+</script>
+
 </head>
 <body>
   <div id="content">
-  </div>
-</body>
-</html>
+
+<form name="first" action="http://symlink.dk/code/php/submit/" onsubmit="return validateForm();" method="post">
+
+Name: <input type="text" name="fname">
+<br>
+
+Email: <input type="text" name="email">
+<br>
+
+Do you have phone? 
+<input type="checkbox" name="phone" onclick="return revealPhone();">
+
+<div id = "phone" style= "display:none">
+Phone: <input type="phone" name="phonenumber">
+</div>
+
+<br>Gender: <br>
+<input type="radio" name="gender" value="male"> Male
+<input type="radio" name="gender" value="female"> Female
+
+  
+<br>
+<input type="submit" value="Submit">
+
+</form>
+
+  
+</div>
+
+
+
+</body></html>
