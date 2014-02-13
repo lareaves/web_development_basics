@@ -1,0 +1,51 @@
+body {
+background-color:#336699;
+}
+
+div#Content {
+width: 450px;
+margin-left:auto;
+margin-right:auto;
+margin-top:25px;
+}
+
+div#Content div#ButtonContainer {
+height:50px;
+}
+
+div#ButtonContainer button#SignUpButton {
+width:100px;
+height:2em;
+}
+
+div#SignUpForm {
+background-color:#4080BF;
+border: 5px solid #204060;
+height: auto;
+display:none;
+padding:10px;
+}
+
+div#SignUpForm ul {
+width:80%;
+margin-top:25px;
+margin-left:auto;
+margin-right:auto;
+}
+
+div#SignUpForm li {
+list-style-type:none;
+margin-top:10px;
+}
+
+div#SignUpForm li input,select {
+float:right;
+}
+
+div#ErrorContent {
+color:#BB0000;
+height:auto;
+background-color:#79A6D2;
+padding:5px;
+margin-bottom:5px;
+}

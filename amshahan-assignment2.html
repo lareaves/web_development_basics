@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-  <div id="content">
-  </div>
-</body>
+<html>
+	<head>
+		<title>Austin Shahan - Assignment 2</title>
+		<link rel="stylesheet" type="text/css" href="amshahan-style.css" />
+		<script type="text/javascript" src="jquery-min.js"></script>
+		<script type="text/javascript" src="amshahan-script.js"></script>
+	</head>
+	<body>
+		<div id="Content">
+			<div id="ButtonContainer">
+				<button id="SignUpButton" onclick="$('#SignUpForm').slideDown();">Sign Up!</button>
+			</div>
+			<div id="SignUpForm">
+				<form method="post" action="http://symlink.dk/code/php/submit/" onsubmit="return Validate()">
+					<ul>
+					<li>
+						<label for="First">First :</label>
+						<input type="text" id="First" name="First" />
+					</li>
+					<li>
+						<label for="Last">Last :</label>
+						<input type="text" id="Last" name="Last" />
+					</li>
+					<li>
+					<label for="Gender">Gender :</label>
+					<select id="Gender" name="Gender">
+						<option value="None">Select A Gender</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						<option value="Other">Other</option>
+					</select>
+					</li>
+					<li>
+						<label for="Email">Email :</label>
+						<input type="email" id="Email" name="Email" />
+					</li>
+					<li>
+						<label for="Password">Password :</label>
+						<input type="password" id="Password" name="Password" />
+					</li>
+					<li>
+						<label for="RePassword">Re-enter Password :</label>
+						<input type="password" id="RePassword" name="RePassword" />
+					</li>
+					</ul>
+					<div id="ErrorContent"></div>	
+					<input type="submit" value="Submit" />
+				</form>
+			</div>
+		</div>
+	</body>
 </html>
