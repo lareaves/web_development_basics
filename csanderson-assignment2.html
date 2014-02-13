@@ -1,11 +1,38 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jquery-min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <title>CS230 Assignment 2 - csanderson</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script type="text/javascript" src="csanderson-script.js"></script>
 </head>
+
 <body>
   <div id="content">
+    <form name="cross_the_bridge" id="test_form" method="post" onsubmit="return validateForm()" action="http:symlink.dk/code/php/submit/">
+      What is your name?<input type="text" name="name"><br><br>
+      What is your quest?<br>
+      <input type="checkbox" name="quest" value="holygrail">To seek the Holy Grail.<br>
+      <input type="checkbox" name="quest" value="form">To complete the form.<br><br>
+      What is the airspeed velocity of an unladen swallow? (Must be greater than zero!)<br>
+      <input type="number" name="velocity"><br><br>
+      What do you mean, an African or a European swallow?<br>
+      <select name="swallow">
+	<option value="undecided">Choose!</option>
+	<option value="african">African</option>
+	<option value="european">European</option>
+	<option value="idk">I don't know</option>
+      </select><br><br>
+      <input type="submit" value="Submit">
+    </form><br><br>
+  </div>
+  
+  <button type="button" onclick="$('#monty_python_picture').slideToggle();">Reveal the Truth!</button><br>
+  <div id="monty_python_picture" style="display: none;">
+    <img src="http://1-media-cdn.foolz.us/ffuuka/board/tg/thumb/1375/41/1375413631789s.jpg">
+  </div>
+
+  <div id="dom_manip">
+    <h2 onclick="change_text(this)">Have at you and click me!</h2>
   </div>
 </body>
 </html>
