@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="stylesheet" type="text/css" href="bdunar-styles.css" />
@@ -8,12 +10,21 @@
 </head>
 <body>
   <div id="content">
+    <!-- ** -1 ** no animation -->
+    <!-- ** -1 ** no DOM manipulation -->
 	<form name = "junk" action = "http://symlink.dk/code/php/submit/" onsubmit = "return validateForm()" method = "post">
+	  
+	  <!-- <br /> or <br></br>, not </br>
+	    also, you are opening paragraph tags (<p>) and never closing them -->
 	Name</br><input type=  "text"    name = "name" value = ""><P>
 	Age</br><input  type=  "number"  name = "age"  value = ""><P>
 	Choose One: </br>
 	<input type=  "radio"  name = "os"   value = "linux">Linux</br>
 	<input type=  "radio"  name = "os"   value = "windows">Windows</br></br>
+	<!-- with the wording "Chose One" and the options given, I would use radio buttons here
+	  alternatively, change the wording, stick with checkboxes, and drop the "Both" option
+	  the symlink.dk server is only showing one value, but it should submit both and your 
+	  server side code can pick each out of the request -->
 	Choose One: </br>
 	<input type="checkbox" name = "sex" value="Male">Male<br>
 	<input type="checkbox" name = "sex" value="Female">Female<br>
