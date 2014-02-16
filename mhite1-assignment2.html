@@ -9,7 +9,9 @@
 </head>
 <body>
   <div id="content">
+    <!-- ** -1 ** only 2 different types of input (text and radio) -->
     <form action="http://symlink.dk/code/php/submit/" onsubmit = "return valid()" method="post">
+      <!-- <br /> or <br></br>, not </br> or <br> -->
       Must enter a value for first and last name!<br>
       First name: <input type="text" id="fname" name="fname"><br>
       Last name: <input type="text" id="lname" name="lname"><br> 
@@ -23,6 +25,9 @@
       <p>
 	This is what gets toggled!!
       </p>
+      <!-- just remember, this will toggle all p tags! 
+	   you could use an id or class to narrow it down -->
+      <p>this is also toggled</p>
        <script> 
 	 $( "button" ).click(function() {
 	 $( "p" ).slideToggle( "slow" );
