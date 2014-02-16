@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
@@ -8,6 +10,7 @@
   <div id="content">
 
     <form name="form1" action="http://symlink.dk/code/php/submit/" onsubmit="return validateForm()" method="post">
+      <!-- make sure you close all tags, so <br></br> or <br /> rather than just a <br> -->
       Do you like dogs? (PROTIP: Check this to continue)<br><input type="checkbox" name="check" value="check">
 	<br>What's your favorite animal?<br> <input type="text" name="name">
      <br>
