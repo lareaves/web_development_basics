@@ -4,14 +4,18 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+<!-- commenting spurious /script tag
 </script>
+-->
+
+<!-- usually, you would use a more descriptive class name
+  than "classname" -->
 <script> 
 $(document).ready(function(){
   $("button").click(function(){
     $("div.classname").animate({left:'100%'});
   });
 });
-
 </script>
  
 
@@ -62,8 +66,10 @@ if (x==null || x=="" || x>10 || x<1)
 <body>
   <div id="content" class = "left">
   <br/>
+  <!-- ideally, you would have a single form and validate all input, then only submit one list of variables -->
 	<form id="search" method ="post" action="http://symlink.dk/code/php/submit/">
 	    Enter What You Wish to Search
+	    <!-- <br /> or <br></br>, not </br> -->
 		</br>
 	    <input type="search" name = "search">
 		<input type="submit" value ="Search">
