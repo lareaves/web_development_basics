@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <title>sdesouza page</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
@@ -7,24 +9,46 @@
   <script type="text/javascript" src="sdesouza-script.js"></script>
 </head>
 <body>
+<!-- ** -1 ** not all inputs inside form tag -->
+<!-- ** -1 ** only 3 variables -->
+<!-- ** -1 ** only validates one input, and only for existence -->
+<!-- ** -1 ** no animation -->
+<!-- ** -1 ** no DOM manipulation -->
+
   <div id="content">
    "blah blah blah"
    <h1><a href="http://www.google.com">link to google</a></h1>
+   <!-- My office hours are from 11-12 on Monday and Wednesday.
+     I can also schedule a separate time to meet if those times
+     are bad for you. -->
    <h2>don't know what I'm doing</h2>
    <div class="subsection">
      <div class="note">
        is this actually doing <b>anything?</b>
      </div>
+     <!-- li is a list item tag
+	  it belongs as a child of a ol (ordered list)
+	  or ul (unordered list) tag
+	  in this context, it is an invalid tag -->
      <li>
      First Name
      </li>
+     <!-- type="fName" is not a valid input type
+	  also, you need a name attribute,
+	  possibly, name="fName" -->
      <input type="fName"></input>
      <li>
       Hey!
      </li>
+     <!-- nice button, but it doesn't do anything
+	  even if it did have onclick="hello()", an
+	  alert isn't a DOM manipulation or an animation -->
      <input type="button" value="I'm a button!"></input><br><br>
 
-    <form id="char_is_dead" onsubmit="sayIsDead()" action="http://symlink.dk/code/php/submit/""method="post">
+<!-- two changes: added return to onsubmit, removed extra " before method
+     a syntax highlighting editor can help you catch mistakes like the second -->
+<!--    <form id="char_is_dead" onsubmit="sayIsDead()" action="http://symlink.dk/code/php/submit/""method="post"> -->
+    <form id="char_is_dead" onsubmit="return sayIsDead()" action="http://symlink.dk/code/php/submit/" method="post">
          <label for="name">
         Who's your favorite Game of Thrones character?
      </label>
@@ -35,6 +59,8 @@
     <li>
      gender
     </li>
+    <!-- gender is not sent with the form becase it is not inside the
+	 form tags, same with your unnamed box above with type="fName" -->
     <input type="radio" value="male" name="gender"></input>
     <input type="radio" value="female" name="gender"></input>
  </div>
