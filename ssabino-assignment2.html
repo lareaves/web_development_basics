@@ -10,8 +10,15 @@
 		var msg = 'Do you click on everthing?';
 		alert(msg);
 	}
+<!-- multiple functions can be defined in a single script tag
 </script>
-<script>
+<script> -->
+<!--
+    validateForm should return false if any of the validations fail
+    and should return true otherwise
+
+    your form submits even if validation fails
+-->
 	function validateForm(){
 		validateConsent();
 		validateEmail();
@@ -79,6 +86,7 @@
 </head>
 <body id="body">
   <div id="content">
+    <!-- ** -1 ** validation integration issue -->
     <button type="button" onclick="$('#hidden_div').slideToggle();">CLICK ME!</button><br /><br/>
       <div id="hidden_div">
 	<div>
@@ -100,6 +108,8 @@
 	  <li>Birthdate</li>
 	  <input type="date"/>
           <li>Select Profile Picture</li>
+	  <!-- for your reference, when uploading files you must include an
+	       enctype="multipart/form-data" attribute in your form tag -->
 	  <input type="file" name="prof_pic" accept="image/*"/>
 	  <li>Email:</li>
 	  <input type="email" name="usr_email"/>
