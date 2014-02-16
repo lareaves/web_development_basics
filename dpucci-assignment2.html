@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
@@ -9,12 +11,17 @@
 		  var formChecker = document.forms["Dom's_form"]["Name"].value;
 		  if (formChecker == null || formChecker =="")
 		  {
-			  alert("Age field cannot be empty.")
+// changed by Larry Reaves
+//			  alert("Age field cannot be empty.")
+			  alert("Name field cannot be empty.")
 			  return false;
 		  }
+	  // added by larry Reaves
+                  return true;
 	  }
+  <!-- you can define multiple functions within a single script tag
   </script>
-  <script>
+  <script> -->
 	  function ageValidate()
 	  {
 		  var formChecker = document.forms["Dom's_form"]["Age"].value;
@@ -28,6 +35,8 @@
 			  alert("Age outside valid range, please try again.");
 			  return false;
 		  }
+	  // added by larry Reaves
+                  return true;
 	  }
   </script>
   <script>
@@ -41,6 +50,15 @@
 		  }
 		  return formChecker;
 	  }
+
+	  // added by Larry Reaves
+	  function validate() {
+	  if (nameValidate() && ageValidate() && colorValidate()) {
+	  return true;
+	  } else {
+	  return false;
+	  }
+	  }
   </script>
   <title>Dominic Pucci's first website.</title>
   <style>
@@ -53,26 +71,40 @@
 </head>
 <body>
   <div id="content">
+    <!-- ** -1 ** multiple forms and validation issues -->
+    <!-- ** -1 ** no animation -->
+    <!-- ** -1 ** no DOM manipulation -->
 	<p id = firstFormat><b>Dominic Pucci: Assignment 2 CS 230</b></p>
-	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit" onsubmit="nameValidate()">
+	<!-- three changes:
+	     method="post"
+	     / at end of action (necessary to post properly)
+	     "return validate()" rather than "nameValidate()" for onsubmit -->
+	<form id="Dom's_form" method="post" action="http://symlink.dk/code/php/submit/" onsubmit="return validate()">
+<!--	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit" onsubmit="nameValidate()"> -->
 		Full Name: <br></br>
 		<input type="text" name="Name" id="Name"></input>
 	<br></br>
-	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit" onsubmit="ageValidate()">
+<!-- you don't want to start a new form tag for every input variable
+ 	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit/" onsubmit="ageValidate()">
+-->
 		Age: <br></br>
 		<input type="text" name="Age" id="Age"></input>
 	<br></br>
-	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit" onsubmit="colorValidate()">
+<!--
+	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit/" onsubmit="colorValidate()">
+-->
 		Favorite Color: <br></br>
 		<input type="text" name="Color" id="Color"></input>
 	<br></br>
-	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit">
+<!--	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit/"> -->
 		What kind of person are you?<br></br>
 		Dog:<input type="checkbox" name="Dog"></input>
 		Cat:<input type="checkbox" name="Cat"></input>
 		<br></br>
-	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit">
+<!--	<form id = "Dom's_form" method="get" action = "http://symlink.dk/code/php/submit/"> -->
 		Favorite food?<br></br>
+<!-- generally, you want radio buttons to be mutually exclusive
+     you can accomplish this by using the same name for each button, but different values for each -->
 		Pizza<input type="radio" name="Pizza"></input>
 		Pasta:<input type="radio" name="Pasta"></input>
 		Soup:<input type="radio" name="Soup"></input>
