@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+
+    <!-- not sure what this is, commenting it doesn't seem to change anything
     <object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 100%; height: 0px; display: block; position: absolute; z-index: 99999; top: 0px;"></object>
+    -->
     
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="jquery-min.js"></script>  
     <meta charset="utf-8">
     <title>abelcas2-assignment 2</title>
+    <!-- good use of css
+	 starting position could have been better
+	 absolution position with px sizing doesn't scale well -->
     <style>
       
       div.circle {
@@ -29,6 +34,7 @@
   <body>
     <div id="content">
       <br />
+      <!-- usually buttons do something, but you prove you know how to make that happen later -->
       It's a button
       <button type="button">Push</button>
       <br />
@@ -37,6 +43,7 @@
       <button id="right">&raquo;</button>
       <div class="circle"></div>
       
+      <!-- excellent -->
       <script>
 	$( "#right" ).click(function() {
 	$( ".circle" ).animate({ "left": "+=50px" }, "slow" );
@@ -46,6 +53,7 @@
 	$( ".circle" ).animate({ "left": "-=50px" }, "slow" );
 	});
       </script>
+      <!-- <br /> or <br></br> -->
       <br>
       <br>
       
@@ -54,7 +62,10 @@
       <p>Click the button to display a confirm box.</p>
       
       <button onclick="myFunction()">Try it</button>
-      
+
+      <!-- good DOM manipulation
+	   jquery syntax for the last line would be a bit more compact:
+	   $('#demo').html(x); -->
       <script>
 	function myFunction()
 	{
@@ -77,6 +88,12 @@
 	<label for="number">Is you number 7?</label>
 	<br/>
 	
+	<!-- ** -1 ** you need four different types of input
+	     <input type="number" id="number" name="number" value="7" />
+	     notice the type="number": this is what controls how the input appears
+	     type="number" adds the up and down arrows on the side of the box
+	     without specifying a type, you get the default type="text"
+	  -->
 	Number:<input id="number" name="number" value="7" />
 	
 	<br/>
