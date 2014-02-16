@@ -42,7 +42,11 @@ else if (x>72)
 </head>
 
 <body>
+
+<!-- ** -1 ** no animation -->
+
 <h1 style="text-align: center"> Coder's Survey </h1>
+<!-- <br /> or <br></br>, not </br> or <br> -->
 <br>
 <br>
 <br>
@@ -60,10 +64,13 @@ Age (only 18-72 allowed): <input type="number" name="age" min="1" max="999999999
 <br>
 <br>
 <h3>Mouseover image to change image</h3>
-<img src="image1"
-onmouseover="this.src='image2';">
+<!-- changed src to actual images provided by another student, DOM manipulation credit -->
+<img src="images/img1.jpg"
+onmouseover="this.src='images/img2.jpg';">
 <br>
 <br>
+
+<!-- you pretty much just needed to make a div with id="hidden_div" and make a button with this in the onclick -->
 $("#hidden_div").slideToggle();
 
 
