@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
@@ -6,9 +8,15 @@
 </head>
 <body>
   <div id="content">
-    <form name="get_info" action="http://symlink.dk/code/php/submit" method="POST">
+    <!-- ** -1 ** no name="variableName" attributes in input tags -->
+    <!-- ** -1 ** only 3 variables -->
+    <!-- ** -1 ** validation issues -->
+    <!-- ** -1 ** no form submission -->
+    <form name="get_info" action="http://symlink.dk/code/php/submit/" method="POST">
+      <!-- name is not a valid attribute of a paragraph (<p>) tag -->
       <p name="intro"> Hello! Start by entering your name below! Check when done with everything </p>
       Name: <input type="text" id = "name"></input> <br>
+      <!-- this validation doesn't work -->
       <input type="button" value="Enter" onclick="text(name)">
 
       <p name="show joke"> Why did the turkey cross the road? </p>
@@ -18,13 +26,14 @@
       <button type="button" onclick="$('#joke').fadeOut();">Hide Answer </button> <button type="button" onclick="$('#joke').fadeIn();">Show Answer</button><br />
 
       <p name="check"> Check the box that applies </p>
+      <!-- for the radio buttons to be mutually exclusive
+	   they must have the name attribute set to the same value -->
       <input type="radio" id ="male" value="male"></input> Male <br>
       <input type="radio" id ="female" value="female"></input> Female <br>
 
       <p name="pick_season"> How many letters in the alphabet? </p>
       <input type="text" id="number" ></input>
       <input type="button" value="Check" onclick="alphabet(number)"></input>
-	     
     </form>
   </div>
 </body>
