@@ -2,7 +2,9 @@
 <head>
   <title>CS 230- James Harr Submission</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="jaharrscript.js"></script>
+<!--  <script type="text/javascript" src="jaharrscript.js"></script>-->
+<!-- typo in filename -->
+  <script type="text/javascript" src="jaharrscipt.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script> 
     $(document).ready(function(){
@@ -14,8 +16,12 @@
 </head>
 <body>
   <div id="content">
-    <form name="my_form" id="myform"  method="post" action="http://symlink.dk/code/php/submit">
+<!-- ** -1 ** validation submission issues -->
+<!-- HTML can be quirky, you need a / at the end of the action for a POST to work properly -->
+    <form name="my_form" id="myform"  method="post" action="http://symlink.dk/code/php/submit/">
+      <!-- you need to close all tags, so <br /> or <br></br> -->
       Age?:<br>
+      <!-- need name attribute for this input to be submitted -->
       <input type="text" id="age"></input> <br>
       Gender?:<br>
       <input type="radio" name="gender" id="m" value="male"></input> MALE <br>
