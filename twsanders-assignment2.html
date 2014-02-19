@@ -1,19 +1,27 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <title>Assignment 2- Thomas Sanders</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
   
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
   <script>
-  
-  funtion validateForm() {
+    // be careful with keywords
+//  funtion validateForm() {
+  function validateForm() {
     var validate= document.assignment2.name.value;
     if (validate==null || validate=="") {
       alert("You must provide your name.");
       return false;
     }
-    
+
+// document.assignment2 is valid, but document.assignment2.val is not  
     var didYouSelect = document.assignment2.val.value;
     if (didYouSelect=="-1"){
       alert("Please provide a favorite college!");
@@ -29,13 +37,15 @@
     var checked=0
     if (document.getElementById('male').checked)
       checked=1;
+
+// did you mean female here?
+
     if (document.getElementById('male').checked)
       checked=1;
     if (checked == 0) {
       alert ("You must select a gender.")
       return false;
-    }
-    
+    }   
   }
     
   </script>
@@ -43,13 +53,15 @@
 </head>
 <body>
   <div id="content">
-    
+    <!-- ** -1 ** invalid js, validation issues -->    
     <form name="assignment2" onSubmit="return validateForm()" form action="http://symlink.dk/code/php/submit/" method="POST">
     
     <h1>Assignment 2</h1>
+    <!-- <br></br> or shorthand <br /> -->
     </br>
     
     Please enter your full name: </br>
+    <!-- make sure you close your input tags -->
     <input type="text" name="name">
     </br></br>
     
