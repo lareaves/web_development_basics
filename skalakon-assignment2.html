@@ -10,7 +10,9 @@
 </head>
 <body>
   <div id="content"><h1 align="center">Registration form
+<!-- you probably want your form inside your content div -->
   </div>
+  <!-- ** -1 ** validation issues -->
   <form method="post" action="http://symlink.dk/code/php/submit/">
   First Name:<input type="text" name="firstname" id="first"><br>
   Last Name:<input type="text" name="lastname"><br>
@@ -65,6 +67,8 @@
     <input type="number" min="1900" max="2014" name="year"><br>
     Gender:<input type="radio" name="sex" value="M">Male<input type="radio" name="sex" value="F">Female<br>
     Address:<input type="textarea" name="address"><br>
+<!-- rather than a separate validate button, the form should be validated when the user tries to submit it -->
+<!-- Your validation function should return true if the form is valid, and false otherwise.  It should also display all the form errors at once so that the user can correct them. -->
     <button type="button" onclick="validate(); return false;">Validate</button>
     <input type="submit" name="submit">
       <button type="button" onclick="$('#hidden').slideToggle();">Run Animation()</button>
