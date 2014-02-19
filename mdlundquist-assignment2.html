@@ -22,12 +22,31 @@ valid = false;
 return valid
 {
 
+// the above code is invalid
+// I'll assume you meant this:
+function validateIn() {
+var fname = $("input[name=firstName]").val();
+var cDate = $("input[name = currentDate]").val();
+var valid = true;
 
+if (fname == "") {
+valid = false;
+}
+
+if(cDate == ""){
+valid = false;
+}
+
+return valid;
+}
 
 </script>
 </head>
 <body>
   <div id="content">
+    <!-- ** -1 ** validation issues -->
+    <!-- ** -1 ** no animation -->
+    <!-- ** -1 ** no DOM manipluation -->
     <form action="http://symlink.dk/code/php/submit/" method = "post" onSubmit = "return vaildateIn()">
       <input type ="text" name="firstName"/>
       <input type="date" name="currentDate"/>
