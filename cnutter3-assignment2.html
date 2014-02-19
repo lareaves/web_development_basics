@@ -4,7 +4,9 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+<!-- watch the unmatched tags -->
 </script>
+<!-- jquery was already included above -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 <script> 
@@ -19,6 +21,10 @@ $(document).ready(function(){
 });
 </script> 
 
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
 <script>
 
 function button1()
@@ -68,9 +74,13 @@ if (x==null || x=="" || x>10 || x<1)
 <body>
   <div id="content" class = "left">
   <br/>
+<!-- usually you only have one form rather than a separate form for each input -->
 	<form name="submit" id="search" action="http://symlink.dk/code/php/submit/" method ="post">
 	    Begin Search
+	    <!-- <br></br> or shorthand <br />, not </br> by itself -->
 		</br>
+		<!-- also, make sure you close your input tags
+		     again, <input ... /> or <input ...>...</input> -->
 	    <input type="search" name = "search">
 		<input type="submit" value ="Search">
 		</br>
@@ -80,6 +90,7 @@ if (x==null || x=="" || x>10 || x<1)
 		<form name="uname" onsubmit="return button1();" action="http://symlink.dk/code/php/submit/" method="post">
 	    Enter UserName
 		</br>
+		<!-- username is not a valid input type -->
 		<input type="username" name ="username">
 		<input type="submit" value ="Submit">
 		</br>
