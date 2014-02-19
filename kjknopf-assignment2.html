@@ -6,18 +6,26 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
   <script type="text/javascript" src="kjknopf-jsfile.js"></script>
 </head>
 <body>
+  <!-- ** -1 ** validation issues -->
   <div id="content">
-    <form name="assignment2Form" method="post" action="http://symlink.dk/code/php/submit">
+    <!-- HTML can be quirky... you actually need a / at the end of the action for the POST to submit properly -->
+    <form name="assignment2Form" method="post" action="http://symlink.dk/code/php/submit/">
       Name: <input type="text" name="name"><br>
       Status: Freshman <input type="radio" name="status" value="Freshman">
       Sophomore: <input type="radio" name="status" value="Sophomore">
       Junior: <input type="radio" name="status" value="Junior">
       Senior: <input type="radio" name="status" value="Senior"><br>
+      <!-- watch out for misspelled attribute names, this input isn't being submitted -->
       SAT Score: <input type="number" nam="score"><br>
       Birthdate: <input type="date" name="birthdate"><br>
+      <!-- you either need to hook up your submit button or your form tag to run your formValidate() function if you want to actually validate things -->
       <input type="submit">
     </form>
     <button type="button" onclick="$('#hidden_div').slideToggle();">Run animation</button><br>
