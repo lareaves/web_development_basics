@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <!--You will be building a interactive web page in order to learn to use Git, and also practice your HTML, CSS, and Javascript skills.
  After forking the repository that contains the source for the assignment and lecture, you will start by copying the provided skeleton web page. 
  You must name this copy as "mix_user_name-assignment2.html", and check it into the repository before making any changes. If you add any CSS or Javascript
@@ -21,7 +23,11 @@ allowed to use the JQuery Validation Plugin(http://jqueryvalidation.org/) to per
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
-
+<!-- there should not be anything between your </head> and <body> -->
+<!-- Ideally, you would track the validity of the form with a variable
+     and accumulate all the error messages together, so the user
+     doesn't have to submit the form repeatedly.  Also, inserting
+     HTML into the page is usually preferable to using alert() -->
 <script>
 function validation()
 	{
@@ -52,6 +58,7 @@ function validation()
 		
 	}
 </script>
+<!-- should be in the body -->
 	<header >
 		<center>
 		<font size=16>CS230 Assignment 2<br>
@@ -59,6 +66,8 @@ function validation()
 		</center>
 	</header>
 <body>
+<!-- ** -1 ** no animation -->
+<!-- ** -1 ** no DOM manipulation -->
   <div id="content">
 	<form name="form1" action="http://symlink.dk/code/php/submit/" method="post" onsubmit="return validation()" >
 		Name: <input type="text" name="handle" ><br>
