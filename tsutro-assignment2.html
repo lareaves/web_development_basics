@@ -6,16 +6,20 @@
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
+	  <!-- ** -2 ** no validation -->
 		<div id="content">
-			<form action="http://symlink.dk/code/php/submit" method="POST">
+<!-- HTML can be quirky ... you actually need a / at the end of the action for the POST to submit properly -->
+			<form action="http://symlink.dk/code/php/submit/" method="POST">
 	 
-	  
+	  <!-- <br></br> or shorthand <br />
+	       close your input tags as well -->
 				First Name:<input type="text" name="fname"><br>
 				<input type="Submit" value="Submit"><br>
 		
 				<br>
 		
 				Please select your class status.<br>
+				<!-- this is not being submitted, add a name attribute to your select tag -->
 				<select>
 					<option value="Freshman">Freshman</option>
 					<option value="Sophomore">Sophomore</option>
@@ -58,6 +62,7 @@
 			
 			</form> 
 
+			<!-- syntax error -->
 			<img src=<p><a href="http://www.desicomments.com/"></img> 
 		</div>
 		<script>
