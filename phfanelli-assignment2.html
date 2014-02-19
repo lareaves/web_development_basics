@@ -5,6 +5,10 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript" src="jquery-min.js"></script>
+<!-- ideally, you would use a variable to track the validation
+     status and gather all the error messages and display them
+     together so the user can fix them all at once -->
+<!-- inserting HTML into the page is usually preferable to using an alert -->
 <script type="text/javascript">
 
 function checkBlankForm()
@@ -39,13 +43,20 @@ if (a<1 || a>12)
 </script>
 </head>
 <body>
+<!-- ** -1 ** no animation -->
   <div id="content">
     <h1>Philip Fanelli A2</h1>
     <div class="subsection">
-      <form method="POST" action="http://symlink.dk/code/php/submit"  onsubmit="return checkBlankForm()">
-        
+      <!-- HTML can be quirky.... need / at end of action for proper submission -->
+      <form method="POST" action="http://symlink.dk/code/php/submit/"  onsubmit="return checkBlankForm()">
+
+        <!-- make sure you close all tags... you are missing </input> although <input .... /> is also valid shorthand -->
         <label>First Name: <input type="text" id="firstName" name="firstName"></label><br>
         Gender: <br>
+	<!-- you should set a value attribute for each radio button
+	     if no value is set, the name is submitted with value "on"
+	     so there is no way at the moment to distinguish which button
+	     was chosen -->
         <label>Male<input type="radio" id="gender" name="gender"> </label> <br>
         <label>Female<input type="radio" id="gender" name="gender"> </label>  <br>
         <label>Email address: <input type="email" id="emailInput" name="emailInput"></label><br>
@@ -53,6 +64,7 @@ if (a<1 || a>12)
         <input type="submit" value="Submit!"><br>
 	
       </form>
+<!-- this manipulates the DOM (it changes the style properties for the hidden div), but it is an abrupt change rather than an animation -->
       <button type="button" onclick="$('#hidden_div').show();">Run show()</button> <br>
     </div>
     <div id="hidden_div">
