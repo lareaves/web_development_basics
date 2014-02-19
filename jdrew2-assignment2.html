@@ -3,6 +3,8 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+<!-- it would be good if you displayed an error message so the user
+     isn't left wondering why submit appears to do nothing -->
 <script type="text/javascript">function validateAge(){
 var valid = false;
 var age=$("input[name=age]").val();
@@ -14,29 +16,41 @@ return valid;}
 </head>
 <body>
   <div id="content">
-    <form action="http://symlink.dk/code/php/submit" method="post" onsubmit="return validateAge()">
+    <!-- ** -1 ** only validates one input -->
+    <!-- ** -1 ** no animation -->
+    <!-- ** -1 ** no DOM manipluation -->
+    <!-- need slash at end of action to properly submit... html is quirky at times -->
+    <form action="http://symlink.dk/code/php/submit/" method="post" onsubmit="return validateAge()">
+      <!-- remember to close all tags, so <br /> or <br></br> -->
       Age<br> 
       <input type="number" name="age"><br>
+      <!-- you only need one form tag per form
     </form>
-    <form action="http://symlink.dk/code/php/submit" method="post">	
+    <form action="http://symlink.dk/code/php/submit" method="post">-->
       Textbox<br>
       <input type="text" name="textbox" value="Enter text here"><br>
-    </form>
-    <form action="http://symlink.dk/code/php/submit" method="post">
+<!--    </form>
+    <form action="http://symlink.dk/code/php/submit" method="post">-->
       Grad status<br>
+<!-- you need a name attribute for your select tags
+     if you want them to actually be submitted to the server -->
       <select>
         <option value="Graduated">Graduated</option>
         <option value="Undergrad">Undergrad</option>
       </select><br>
-      <button type="submit">Submit</button>
+<!--      <button type="submit">Submit</button>
     </form>
-    <form action="http://symlink.dk/code/php/submit" method="post">
+    <form action="http://symlink.dk/code/php/submit" method="post">-->
       Gender<br>
+<!-- name attribute again -->
       <select>
 	<option value="Male">Male</option>
 	<option value="Female">Female</option>
       </select><br>
-      <button type="submit">Submit</button>
+      <!-- input tag rather than button tag -->
+      <input type="submit">Submit</button>
+      <!-- added /form tag -->
+      </form>
   </div>
 </body>
 </html>
