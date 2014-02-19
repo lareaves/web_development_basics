@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
   <title>Eaton's Page</title>
-  
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
   <script type="text/javascript">
 	function ShowAlert(Text)
 	{
@@ -51,8 +56,11 @@
   
   <form id="MyForm" method="POST" onsubmit="return ValidateForm()" action="http://symlink.dk/code/php/submit/">
 	Name: <input type="text" id ="s" name="FN"></input>
+	<!-- <br></br> or shorthand <br /> -->
 	</br>
 	
+	<!-- also make sure you close your input tags
+	  (<input .../> or <input ...>...</input>) -->
 	Phone number: <input type="tel" name="Cell">
 	</br>
 	
