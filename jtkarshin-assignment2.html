@@ -2,6 +2,10 @@
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
   <script type="text/javascript" src="jtkarshin-script.js"></script>
 </head>
 <body>
@@ -9,6 +13,8 @@
     <form method="post" action="http://symlink.dk/code/php/submit/" onsubmit="return validate()">
       <b>Sample Form</b><br><br>
       Adventurer Name:<br>
+      <!-- make sure you close all tags <br></br> or the shorthand <br />
+	   same with input tags -->
       <input name="name" id="name" type="text"><br><br>
       Level:<br>
       <input name="level" id="level" type="text"><br><br>
