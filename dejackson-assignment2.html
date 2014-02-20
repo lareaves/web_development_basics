@@ -1,3 +1,9 @@
+<!-- this should go inside a script tag inside either the
+     head or the body -->
+<!-- Ideally, you would track the validity of the form with a variable
+     and accumulate all the error messages together, so the user
+     doesn't have to submit the form repeatedly.  Also, inserting
+     HTML into the page is usually preferable to using alert() -->
 function validate(name, age, gender){
 if (name == "" || name == null){
 alert("Please enter a valid name.");
@@ -21,6 +27,7 @@ return true;
 
 
 <!DOCTYPE html>
+<!-- good job adding the html tag, but you need the head tag as well -->
 <html>
 <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
@@ -28,8 +35,13 @@ return true;
 </head>
 <body>
 <div id = "content">
-<form name = "myform" action="http://symlink.dk/code/php/submit" method = "post">
+<!-- ** -1 ** validation not included properly or hooked up to form -->
+<!-- because HTML is quirky, you actually need a / at
+     the end of the action for the post to submit properly -->
+<form name = "myform" action="http://symlink.dk/code/php/submit/" method = "post">
 Enter your name.
+<!-- make sure you close all tags (br, input, p, etc)
+     <br></br> or the shorthand <br /> -->
 <br>
 <input type="text" name="name">
 <p>

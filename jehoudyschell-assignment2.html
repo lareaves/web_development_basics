@@ -1,10 +1,14 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+<!-- ideally, you would customize the error message
+     so the user know what the problem is -->
 <script type="text/javascript">function validate(){
 	var valid = true;
 	var textarea = $("textarea#Name").html();
@@ -29,21 +33,32 @@
 	return valid;
 }
 </script>
+<!-- ** -1 ** validation problems -->
   <div id="content"><div id="hidden_div">
 	  <img src="http://inchikutty13.files.wordpress.com/2013/12/thumbs-up-smiley-face.jpg" height = "100" width = "130"></img>
       </div>
       <button type="button" onclick="$('#hidden_div').slideToggle();">Run slideToggle()</button><br /><br />
       <div id="error"></div>
-    <form action="http://symlink.dk/code/php/submit" method="post" onsubmit="return validate();">
+      <!-- HTML can be quirky.  You actually need a / at the end
+	   of the action for the post to submit correctly -->
+    <form action="http://symlink.dk/code/php/submit/" method="post" onsubmit="return validate();">
+      <!-- your validation passes with the default value, which
+	   is probably not what you want -->
       <textarea name="Name" id="Name" rows="1" cols="30">First/last name here</textarea>
 	    <br />
       Gender
+	    <!-- similarly, a select will be set to the first
+		 option if there is not option with the
+		 selected attribut set, so your validation again
+		 passes by default -->
       <select name="Gender" id="Gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select>
 	    <br />
       Birthday
+	    <!-- this also passes validation because
+		 undefined != "" -->
 	    <input name="Birthday" id="Birthday" type="date" />
 	    <br /><br />
 	    Courses taking
