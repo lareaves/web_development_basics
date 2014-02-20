@@ -1,10 +1,16 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
+  <!-- jquery was already included -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
   <script type="text/javascript" src="script.js"></script>
-  
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
   <script>
 function validateForm()
 {
@@ -53,7 +59,12 @@ Survey
 
 <form name="myForm" action="http://symlink.dk/code/php/submit/"  onsubmit="return validateForm()" method="post">
 
-
+<!-- li is a list item
+     it belongs nested in either a ul (unordered list)
+     or an ol (ordered list) tag
+     it is invalid in this context, although the 
+     browser makes a best effort to guess what you mean,
+     which is why you get bullets next to all these items -->
 <li>Name:</li>
 <input type="text" id="name" name="name"></input>
 <li></li>
@@ -84,6 +95,7 @@ Survey
 <li><input type="checkbox" id="bio" name="check_box_Bio" ></input>Biometrics</li>
 <li></li>
 
+<!-- good job closing all tags -->
 
 <li>Click to Submit</li>
 <input type="submit" value ="Submit"></input>
