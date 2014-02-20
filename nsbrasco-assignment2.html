@@ -7,10 +7,17 @@
   <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+  <!-- ** -1 ** missing names for many elements, missing values for checkboxes and radio buttons -->
   <div id="content">
+    <!-- HTML can be quirky, for a post to work properly, you need a / at the end of the action -->
     <form name = "myForm" action="http://symlink.dk/code/php/submit" onsubmit="return validateForm()" method="post">
+      <!-- all open and close tags must be matched
+	   you have a </marquee> without an <markquee>
+	   and you aren not closing your input or br tags -->
     Let me get to know you!  Please fill out some basic information below!</marquee><br>
     What is your first name?<br>
+<!-- textbox is not a valid input type:
+     http://www.w3schools.com/Tags/att_input_type.asp -->
     <input type="textbox" name = "name"><br>
     How old are you?<br>
     <input type="textbox" name = "age"><br>
@@ -19,6 +26,10 @@
     What color is your hair?<br>
     <input type="textbox" name = "hairColor"><br>
     What do you like to do?<br>
+    <!-- you always need a name attribute for any inputs
+	 that you want to actually be submitted -->
+    <!-- you also need a value attribute for any checkboxes
+	 or radio buttons -->
     <input type="checkbox">play video games<br>
     <input type="checkbox">play sports<br>
     <input type="checkbox">play instruments<br>
@@ -32,6 +43,10 @@
     <button type="submit">Submit
     </form>
   </div>
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
   <script>
   function validateForm() {
 	var name = document.forms["myForm"]["name"].value;
