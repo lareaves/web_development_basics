@@ -1,8 +1,15 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="jquery-min.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <!-- ideally you would show all errors at once
+	 so the user does not need to keep resubmitting
+	 to figure out what to fix next
+	 inserting HTML into the page is usually pefereable to
+	 using alert() -->
     <script type="text/javascript" src="zpepper-script.js"></script>
 </head>
 <body>
@@ -12,12 +19,15 @@
         <div class="subsection" id="hideable_div">
             <form id="assign2_inputs_form" method="post" action="http://symlink.dk/code/php/submit/" onsubmit="return customValidate()">
                 Enter some text<br />
+		<!-- you did better than most, but make sure you close
+		     all tags... you missed this input -->
                 <input type="text" name="boxed_text" id="boxed_text" value=""><br /><br />
                 Did you enter any text?<br />
                 Yes<input type="radio" name="radio_val" value="yes"/>
                 No<input type="radio" name="radio_val" value="no" /><br /><br />
                 Enter a positive number between 1 and 100 (inclusive)<br />
                 <input type="number" name="theNumber" value="0" id="theNumber"/><br />
+		<!-- good job -->
                 <button type="button" onclick="increase5();">Increase by 5</button>
                 <button type="button" onclick="double();">Double</button><br /><br />
                 Enter today's date<br />
