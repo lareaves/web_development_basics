@@ -3,6 +3,11 @@
 
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
+  <!-- also, your age checks pass if age is blank -->
   <script type="text/javascript" src="samerman-script.js"></script>
 </head>
 
@@ -10,16 +15,20 @@
 <h1><center>CS 230</center></h1>
 <h2><center>Steven Amerman's Form</center></h2>
 <body>
+  <!-- ** -1 ** age validation issue -->
   <div id="content">
   <form  onsubmit="return validateForm();" method="post" name="form" action="http://symlink.dk/code/php/submit/"  >
   <table>
   <tr>
+    <!-- make sure you close your input tags with <input ...>...</input> or the shorthand
+	 <input ... /> -->
   <td align="right">Username:</td> <td align="left"><input type="text" name="username"></td>
   </tr>
   <tr>
   <td aligh="right">Password:</td> <td align="left"><input type="password" name="pass"></td><br>
   </tr>
   <tr>
+    <!-- <br></br> or <br /> -->
   <td align="right">age:</td> <td align="left"><input type="number" name="age"><br>
   </tr>
   </table>
@@ -40,6 +49,8 @@ What's your favorite flavor of ice cream?<br>
   
   <p>
   Select your favorite type of Vehicle:<br>
+ <!-- did you intend to have sedans=sport, sedans=trucks, etc? or should this maybe be named
+      vehicle or something similar? -->
   <select name="sedans">
   <option value="sport">Sport</option>
   <option value="trucks">Trucks</option>
