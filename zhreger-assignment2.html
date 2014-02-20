@@ -1,18 +1,28 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+  <!-- ** -2 ** no validation -->
+  <!-- ** -1 ** no animation -->
+  <!-- ** -1 ** no DOM manipulation -->
   <div id="content">
     <p> Sochi 2014 Winter Olympics Opinion Board </p>
+    <!-- I'm not sure where you are getting this character: “
+	 but it is not the same as double quote (") and it
+	 causes problems -->
     <form action=“http://symlink.dk/code/php/submit“ method=“POST”>
+      <!-- make sure you close all tags, including br and input -->
       Enter Your Full Name <br>
       <input type=“text” name=“name”><br> 
       <button type=“button”>Submit</button><br><br>
 
       Select Who you Think will Have the Highest Medal Count<br>
+      <!-- select needs a name attribute if you want it to be submitted -->
       <select>
         <option value=“starter”> </option>
         <option value=“USA”>USA</option>
