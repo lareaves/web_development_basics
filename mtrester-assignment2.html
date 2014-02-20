@@ -2,6 +2,10 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="mtrester-css.css"></link>
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
   <script type="text/javascript" src="mtrester-js.js"></script>
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>  
@@ -22,7 +26,11 @@
 	  oOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo 
 	</div><br /> <br />
 	
-	
+	<!-- nice job closing all tags -->
+
+	<!-- just FYI, if you actually want to submit a file, rather
+	     than just a file name, you must add an
+	     enctype="multipart/form-data" to your form tag -->
 	<form method="post" name="form" action="http://symlink.dk/code/php/submit/" onsubmit="return validate()">
 		Enter something in the text box: <br />
 		<input type="text" name="text1" /><br /><br />
@@ -33,7 +41,7 @@
 		Select a file: 
 		<input type="file" name="text4" /><br /><br />
 		<input type="submit" value="Submit" />
-    </form>
+	</form>
 	<br /><br />
 	
   </div>

@@ -22,9 +22,14 @@
 <body>
   <div id="content">
 	<h1>This is my webpage</h1>
-	
+
+<!-- usually, you have a single form with multiple inputs rather
+     than one form per input -->
 	<form name="range" id="test_range" method="post" action="http://symlink.dk/code/php/submit/" onsubmit="return numRange();">
 	Please Enter a Number Between 1 and 10
+	<!-- make sure you match up all tags
+	     <br></br> or shorthand <br />
+	     similarly, with input and all other tags -->
 	</br>
 	<input type="number" name="number">
 	<input type="submit" value="Test">

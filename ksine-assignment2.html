@@ -4,6 +4,10 @@
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
   
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
 <script>
 
 function validateForm()
@@ -30,6 +34,9 @@ if(!checkPhone()){
 }
   </script>
 
+<!-- good, although there is not need for a dot
+     for an email to be valid with the new gTLD
+     rules: http://en.wikipedia.org/wiki/Generic_top-level_domain -->
 <script>
 function validateEmail()
 {
@@ -74,6 +81,7 @@ return true;
 
 <form name="first" action="http://symlink.dk/code/php/submit/" onsubmit="return validateForm();" method="post">
 
+<!-- make sure you close all input and br tags -->
 Name: <input type="text" name="fname">
 <br>
 
