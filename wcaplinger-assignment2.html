@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
-
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
 <script>
 function checkRadio(radios)
 {
@@ -57,6 +62,7 @@ $(document).ready(function(){
 </script> 
 
 <body>
+  <!-- ** -1 ** form submission is not stopped if validation fails -->
   <div id="content">
   	<form name="test" method="post" action="http://symlink.dk/code/php/submit/" onSubmit="return validateForm();">
   		Name: <input type="text" name="name"><br>
