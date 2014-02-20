@@ -2,11 +2,17 @@
 <head>
   <link rel="stylesheet" type="text/css" href="jdunn10-styles.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
+  <!-- Ideally, you would track the validity of the form with a variable
+       and customize the error message to the particular issues that
+       are found.  Also, inserting HTML into the page is usually
+       preferable to using alert(). -->
   <script type="text/javascript" src="jdunn10-script.js"></script>
 </head>
 <body>
   <div id="content">
 	<form name="infoForm" onsubmit="return validateInfoForm()" method="post" action="http://symlink.dk/code/php/submit/">
+	  <!-- make sure you close your tags
+	       for example, <br></br> or <br /> -->
 	First Name:<input type="text" name="fname">*<br>
 	Last Name:<input type="text" name="lname">*<br>
 	<br>
