@@ -4,17 +4,25 @@
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="jmrobinson-script.js"></script>
 </head>	
+<!-- While disabling the submit is a nice feature,
+     you should not require that they toggle a checkbox
+     to enable it.
+     You can and an onchange attribute to each input that will
+     call unlock, which will make the submit available as soon
+     as valid input is entered. -->     
 	<body onload="start()">
 
 	Welcome to the food ordering service!<br><br>
 	<form action="http://symlink.dk/code/php/submit"> 
 
-
+	  <!-- make sure you close all tags
+	       for example, <br></br> or shorthand <br /> -->
 	What is your name?: <input type="text" name="name" 	id="name" 	value=""><br><br>
 
 	What is your favorite pizza topping?<br>
 	<input type="radio" name="pizza" id="pepperoni" 	value="pepperoni"> Pepperoni<br>
 	<input type="radio" name="pizza" id="cheese" 		value="cheese"> Cheese<br>
+	<!-- be careful, name-"pizza" is invalid -->
 	<input type="radio" name-"pizza" id="sausage" 	value="sausage"> Sausage<br>
 	<input type="radio" name="pizza" id="other" value="other">	Other<br><br>
 
@@ -38,6 +46,7 @@
 
 	<div id="hidden_div" style="notdisplay:block;">
 	<div class ="center image">
+	  <!-- tab in middle of string ? -->
 	<img src="http://i.imgur.com/j2b8lbb.jpg" alt="This is one 	of our amazing products">
 	</div></div></body>
 
