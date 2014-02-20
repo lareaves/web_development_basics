@@ -3,12 +3,18 @@
 <head>
   <title>CS230 Assignment 2 - csanderson</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
   <script type="text/javascript" src="csanderson-script.js"></script>
 </head>
 
 <body>
   <div id="content">
     <form name="cross_the_bridge" id="test_form" method="post" onsubmit="return validateForm()" action="http:symlink.dk/code/php/submit/">
+      <!-- make sure you close all tags <br></br> or <br />,
+	   same with input tags -->
       What is your name?<input type="text" name="name"><br><br>
       What is your quest?<br>
       <input type="checkbox" name="quest" value="holygrail">To seek the Holy Grail.<br>
