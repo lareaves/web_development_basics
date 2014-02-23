@@ -5,17 +5,18 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="jquery-min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+    <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
   <script type="text/javascript" src="bmwaechter-script.js"></script>
 </head>
 <body>
   <div id="content">
-    <!-- ** -1 ** no form tag -->
-    <!-- ** -1 ** no name="variableName" attributes in input tags -->
-    <!-- ** -2 ** no variables -->
-    <!-- ** -2 ** no validation -->
-    <!-- ** -1 ** no animation -->
-    <!-- ** -1 ** no DOM manipulation -->
+    <!-- HTML can be quirky... for a post, you actually need to add a / to the end of the action attribute -->
     <form name="myForm" action="http://symlink.dk/code/php/submit" method="get" onsubmit="return validate()">
+      <!-- make sure you close all tags...
+	   <br></br> or shorthand <br />, same for input -->
       Name:<input type="text" name="name"><br><br>
       Email:<input type="email" name="email"><br><br>
       Password: <input type = "password" name = "pass"><br><br>
@@ -27,6 +28,7 @@
 	<input type="button" onclick="startMarquee()" value="Start">
 	<input type="button" onClick="stopMarquee()" value="Stop">
 	<input type="button" onClick="changeDirection()" value="Change Direction(I guess this is my DOM modification?)"><br>
+	<!-- see above about needing a / at the end of the action -->
     Also a quick note... i set the method of my form to be 'get' rather than 'post' as you requested. This is because when it was set to post, the submission did not recognize any of the inputs submitted, i do not know why this is.
  </div>
 </body>
