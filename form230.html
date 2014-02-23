@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="jquery-min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="validate.js"></script>
+<style>
+div
+{
+width:100px;
+height:100px;
+background:red;
+animation:myfirst 10s;
+-webkit-animation:myfirst 10s; /* Safari and Chrome */
+}  
+  @keyframes myfirst
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background: red;}
+to {background: yellow;}
+}
+</style>
+
+</head>
+<body>
+  <div id="content">
+	<form name="230Form" action="http://symlink.dk/code/php/submit" onsubmit="return validate()" method="post">
+	
+	<!-- validation is through Dom event onsubmit -->
+	
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br>
+  
+  Birth Year: <input type="date" name="year"><br>
+
+  Birth Month: <input type="month" name="birthmonth"><br>
+
+  E-mail: <input type="email" name="email"><br>
+
+
+
+  <input type="submit" value="Submit" >
+  </form> 
+ </div>
+
+</body>
+</html>
